@@ -17,10 +17,26 @@
 		8340B9C62564AE0000C4FF7F /* OAuthSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8340B9C52564AE0000C4FF7F /* OAuthSwift */; };
 		8340B9CB25654B7500C4FF7F /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8340B9CA25654B7500C4FF7F /* SDWebImageSwiftUI */; };
 		8340B9CE25654CD000C4FF7F /* ActivityIndicator+Extens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B9CD25654CD000C4FF7F /* ActivityIndicator+Extens.swift */; };
+		8395ACE82566506900162275 /* LNPopupUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8395ACE72566506900162275 /* LNPopupUI */; };
+		8395ACE92566506900162275 /* LNPopupUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 8395ACE72566506900162275 /* LNPopupUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		83FF3DEF25659062008F3EBE /* SwiftUIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 83FF3DEE25659062008F3EBE /* SwiftUIRefresh */; };
 		83FF3DF725659D30008F3EBE /* NeumorphismUI in Frameworks */ = {isa = PBXBuildFile; productRef = 83FF3DF625659D30008F3EBE /* NeumorphismUI */; };
 		A6F7A2C3BE954683669103E0 /* Pods_WakaTime_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847935B803B749FD31EC3C97 /* Pods_WakaTime_Tracker.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8395ACEA2566506900162275 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8395ACE92566506900162275 /* LNPopupUI in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		833D05722565538E00B9265E /* WakaTimeNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakaTimeNetwork.swift; sourceTree = "<group>"; };
@@ -44,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83FF3DEF25659062008F3EBE /* SwiftUIRefresh in Frameworks */,
+				8395ACE82566506900162275 /* LNPopupUI in Frameworks */,
 				8340B9CB25654B7500C4FF7F /* SDWebImageSwiftUI in Frameworks */,
 				83FF3DF725659D30008F3EBE /* NeumorphismUI in Frameworks */,
 				8340B9C62564AE0000C4FF7F /* OAuthSwift in Frameworks */,
@@ -133,6 +150,7 @@
 				8340B9A82564A98600C4FF7F /* Frameworks */,
 				8340B9A92564A98600C4FF7F /* Resources */,
 				1944F08DC407B3C276C30252 /* [CP] Embed Pods Frameworks */,
+				8395ACEA2566506900162275 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -144,6 +162,7 @@
 				8340B9CA25654B7500C4FF7F /* SDWebImageSwiftUI */,
 				83FF3DEE25659062008F3EBE /* SwiftUIRefresh */,
 				83FF3DF625659D30008F3EBE /* NeumorphismUI */,
+				8395ACE72566506900162275 /* LNPopupUI */,
 			);
 			productName = "WakaTime Tracker";
 			productReference = 8340B9AB2564A98600C4FF7F /* WakaTime Tracker.app */;
@@ -180,6 +199,7 @@
 				8340B9C925654B7500C4FF7F /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				83FF3DED25659062008F3EBE /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */,
 				83FF3DF525659D30008F3EBE /* XCRemoteSwiftPackageReference "NeumorphismUI" */,
+				8395ACE62566506900162275 /* XCRemoteSwiftPackageReference "LNPopupUI" */,
 			);
 			productRefGroup = 8340B9AC2564A98600C4FF7F /* Products */;
 			projectDirPath = "";
@@ -463,6 +483,14 @@
 				minimumVersion = 1.5.0;
 			};
 		};
+		8395ACE62566506900162275 /* XCRemoteSwiftPackageReference "LNPopupUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/LeoNatan/LNPopupUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.6;
+			};
+		};
 		83FF3DED25659062008F3EBE /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/timbersoftware/SwiftUIRefresh.git";
@@ -491,6 +519,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8340B9C925654B7500C4FF7F /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		8395ACE72566506900162275 /* LNPopupUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8395ACE62566506900162275 /* XCRemoteSwiftPackageReference "LNPopupUI" */;
+			productName = LNPopupUI;
 		};
 		83FF3DEE25659062008F3EBE /* SwiftUIRefresh */ = {
 			isa = XCSwiftPackageProductDependency;

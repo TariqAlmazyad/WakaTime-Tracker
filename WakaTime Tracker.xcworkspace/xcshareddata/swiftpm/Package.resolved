@@ -38,6 +38,24 @@
         }
       },
       {
+        "package": "LNPopupController",
+        "repositoryURL": "https://github.com/LeoNatan/LNPopupController.git",
+        "state": {
+          "branch": null,
+          "revision": "ac46499a33cbae7bcf8a55f01ae0f1a0f62e4390",
+          "version": "2.10.24"
+        }
+      },
+      {
+        "package": "LNPopupUI",
+        "repositoryURL": "https://github.com/LeoNatan/LNPopupUI",
+        "state": {
+          "branch": null,
+          "revision": "69b66a19aef48371d8eaa09b8a50c18e949abcb8",
+          "version": "1.2.6"
+        }
+      },
+      {
         "package": "NeumorphismUI",
         "repositoryURL": "https://github.com/iTollMouS/NeumorphismUI",
         "state": {

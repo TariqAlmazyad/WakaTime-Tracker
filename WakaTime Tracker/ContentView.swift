@@ -7,16 +7,21 @@
 
 import SwiftUI
 import NeumorphismUI
+import LNPopupUI
 
 struct ContentView: View {
     
     @ObservedObject var viewModel = WakaTimeNetwork()
     @State var shouldShowFullScreenModel = false
     @State var isShowing = true
+    @State var isBarPresented = true
+    @State var isPopupOpen = false
     let columns: [GridItem] = [GridItem(.flexible()),
                                GridItem(.flexible()),]
     
     var body: some View {
+        
+        
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 neumorphism.color.edgesIgnoringSafeArea(.all)
@@ -40,8 +45,12 @@ struct ContentView: View {
                         }
                     } else {
                         LazyVGrid(columns: columns, spacing: 80){
-                            ForEach(viewModel.wakaTimeData?.data.prefix(10) ?? [], id: \.self) { user in
+                            ForEach(viewModel.wakaTimeData?.data ?? [], id: \.self) { user in
                                 CellRowView(user: user)
+                                    .onTapGesture {
+                                        
+                                        
+                                    }
                             }
                         }
                     }
@@ -52,6 +61,31 @@ struct ContentView: View {
             .background(neumorphism.color)
             .ignoresSafeArea()
         }
+        
+        .popupBarItems({
+            HStack(spacing: 20) {
+                Button(action: {
+                    
+                }) {
+                    Image(systemName: "play.fill")
+                }
+                
+                Button(action: {
+                    
+                }) {
+                    Image(systemName: "forward.fill")
+                }
+            }
+        })
+        .popupTitle("song.title")
+        .popupImage(Image(systemName: "person"))
+        .popupCloseButtonStyle(.chevron)
+        .popupInteractionStyle(.drag)
+        .popupBarStyle(.prominent)
+        .popup(isBarPresented: $isBarPresented, isPopupOpen: $isPopupOpen) {
+            
+        }
+        
     }
 }
 
