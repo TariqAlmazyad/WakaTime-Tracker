@@ -30,14 +30,16 @@ struct ContentView: View {
                         HStack{
                             Spacer()
                             VStack(alignment: .center){
-                                ActivityIndicator()
-                                    .animation(.spring())
-                                Text("Loading...")
+                                ProgressView("Downloading...", value: viewModel.progress, total: 1)
+                                    .progressViewStyle(LinearProgressViewStyle())
+                                    .animation(Animation.easeIn(duration: 5))
+                                Text("\(String(format: "%.2f", viewModel.progress * 100))")
                                     .foregroundColor(.white)
                                     .font(.system(size: 16, weight: .semibold))
                                     .multilineTextAlignment(.center)
+                                    .lineLimit(nil)
                             }
-                            .frame(width: 80, height: 80)
+                            .frame(width: 300, height: 140)
                             .padding()
                             .background(neumorphism.color)
                             .cornerRadius(80)
@@ -51,11 +53,11 @@ struct ContentView: View {
                                         self.user = user
                                         self.isPopupOpen.toggle()
                                     }
-                                  
                             }
                         }
                     }
                 }.padding(.vertical, 140)
+                .padding(.horizontal, 2)
             }
             .navigationBarTitle("Top 100", displayMode: .large)
             .padding(.vertical)
@@ -74,6 +76,7 @@ struct ContentView: View {
             }
             
         })
+        .popupCloseButtonStyle(.round)
         .popupBarCustomView(wantsDefaultTapGesture: false, wantsDefaultPanGesture: false, wantsDefaultHighlightGesture: false) {
             HStack(spacing: 24){
                 Text("Choose any user to\ndisplay coding activity")
@@ -84,25 +87,11 @@ struct ContentView: View {
                     .multilineTextAlignment(.center)
                     .padding(6)
                     .padding(.top, 8)
-                
-                Button(action: {
-                    self.isPopupOpen.toggle()
-                    
-                }, label: {
-                    Image(systemName: "info.circle")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 30, height: 30)
-                })
             }
         }
-        
-        .popupBarStyle(.default)
     }
+    
 }
-
-
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

@@ -127,17 +127,17 @@ struct TopLanguagesView: View {
                 .font(.system(size: 14, weight: .light))
         }.padding(.top, 4)
         
-        HStack {
+        HStack(spacing: 0) {
             ForEach(user.running_total.languages.prefix(3), id: \.self) { language in
                 NeumorphismButton(
                     shapeType: .roundedRectangle(cornerRadius: 20),
-                    normalImage: Image(language.name),
-                    selectedImage: Image(language.name),
+                    normalImage: Image(language.name ?? ""),
+                    selectedImage: Image(language.name ?? ""),
                     width: 40,
                     height: 40,
                     imageWidth: 30,
                     imageHeight: 30) {
-                    didPressLanguage(languageName: language.name)
+                    didPressLanguage(languageName: language.name ?? "")
                 }
             }
         }

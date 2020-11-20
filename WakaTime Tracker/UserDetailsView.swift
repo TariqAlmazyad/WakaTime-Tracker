@@ -26,13 +26,13 @@ struct UserDetailsView: View {
                 TotalHoursView(user: user)
                 
                 LazyVGrid(columns: columns, spacing: 80){
-                    ForEach(user.running_total.languages.prefix(4), id:\.self) { language in
+                    ForEach(user.running_total.languages, id:\.self) { language in
                         LanguageProgressView(user: user, language: language)
                             .padding(.top, 40)
                     }
                 }
                 
-            }.padding(.vertical, 80) // <- end of VStack
+            }.padding(.vertical, 60) // <- end of VStack
             
         }
         .background(neumorphism.color)
@@ -115,7 +115,7 @@ struct LanguageProgressView: View {
                 Circle()
                     .stroke(lineWidth: 5)
                     .opacity(0.2)
-                    .foregroundColor(randomColor.opacity(0.7))
+                    .foregroundColor(randomColor.opacity(0.8))
                     .frame(width: 100, height: 100)
                 Circle()
                     .trim(from: 0.0, to: CGFloat(self.progress / 100))
@@ -127,29 +127,43 @@ struct LanguageProgressView: View {
                     .shadow(color: randomColor, radius: 10, x: 0.0, y: 0.0)
                 
                 VStack(alignment: .center) {
-                    Image(language.name)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 30, height: 30)
+                    if let imageName = language.name {
+                        Image(imageName)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 30, height: 30)
+                    } else {
+                        Image(systemName: "questionmark")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.white)
+                    }
+                    
                     Text("% \(String(format: "%.2f", self.progress))")
                         .padding(.top, 4)
                 }.padding(.bottom)
                 
             }
-            .onAppear(perform: {
+            .onAppear{
                 Timer.scheduledTimer(withTimeInterval: 0.002, repeats: true) { timer in
                     self.progress += 0.1234
                     if self.progress >= languageProgress(language.total_seconds)
                     {
+                        self.progress = languageProgress(language.total_seconds)
                         timer.invalidate()
                     }
-                    
                 }
-            })
+            }
             VStack(spacing: 12) {
-                Text("Hours Coded")
-                    .font(.system(size: 12, weight: .semibold, design: .default))
-                    .foregroundColor(Color.gray)
+                HStack(spacing: 0) {
+                    Text("Hours Coded in: ")
+                        .font(.system(size: 12, weight: .semibold, design: .default))
+                        .foregroundColor(Color.gray)
+                    Text(language.name ?? "")
+                        .font(.system(size: 12, weight: .bold, design: .default))
+                        .foregroundColor(Color.white)
+                }
                 Text("\(Double(language.total_seconds ).asString(style: .full))")
                 Print("\(Double(language.total_seconds ).asString(style: .full))")
             }.padding(.top)
@@ -186,6 +200,9 @@ struct UserInfoView: View {
             Text(user.user.email ?? "no email")
                 .font(.system(size: 14, weight: .semibold, design: .default))
                 .foregroundColor(Color(.lightGray))
+                .onTapGesture {
+                    print("email did select ")
+                }
         }
     }
 }
