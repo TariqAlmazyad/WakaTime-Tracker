@@ -14,9 +14,10 @@
 		8340B9B32564A98900C4FF7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8340B9B22564A98900C4FF7F /* Assets.xcassets */; };
 		8340B9B62564A98900C4FF7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8340B9B52564A98900C4FF7F /* Preview Assets.xcassets */; };
 		8340B9BF2564A99300C4FF7F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B9BE2564A99300C4FF7F /* Model.swift */; };
-		8340B9C62564AE0000C4FF7F /* OAuthSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8340B9C52564AE0000C4FF7F /* OAuthSwift */; };
 		8340B9CB25654B7500C4FF7F /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8340B9CA25654B7500C4FF7F /* SDWebImageSwiftUI */; };
 		8340B9CE25654CD000C4FF7F /* ActivityIndicator+Extens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B9CD25654CD000C4FF7F /* ActivityIndicator+Extens.swift */; };
+		8381EA272566DAFA0079D828 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381EA262566DAFA0079D828 /* UserDetailsView.swift */; };
+		8381EA2A256743150079D828 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 8381EA29256743150079D828 /* SwiftUICharts */; };
 		8395ACE82566506900162275 /* LNPopupUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8395ACE72566506900162275 /* LNPopupUI */; };
 		8395ACE92566506900162275 /* LNPopupUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 8395ACE72566506900162275 /* LNPopupUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		83FF3DEF25659062008F3EBE /* SwiftUIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 83FF3DEE25659062008F3EBE /* SwiftUIRefresh */; };
@@ -49,6 +50,7 @@
 		8340B9B72564A98900C4FF7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8340B9BE2564A99300C4FF7F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8340B9CD25654CD000C4FF7F /* ActivityIndicator+Extens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityIndicator+Extens.swift"; sourceTree = "<group>"; };
+		8381EA262566DAFA0079D828 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		847935B803B749FD31EC3C97 /* Pods_WakaTime_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WakaTime_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA18A51F6F629C2688F4B0D /* Pods-WakaTime Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WakaTime Tracker.release.xcconfig"; path = "Target Support Files/Pods-WakaTime Tracker/Pods-WakaTime Tracker.release.xcconfig"; sourceTree = "<group>"; };
 		E410A0B151CEDD7864FCE002 /* Pods-WakaTime Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WakaTime Tracker.debug.xcconfig"; path = "Target Support Files/Pods-WakaTime Tracker/Pods-WakaTime Tracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -60,10 +62,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				83FF3DEF25659062008F3EBE /* SwiftUIRefresh in Frameworks */,
+				8381EA2A256743150079D828 /* SwiftUICharts in Frameworks */,
 				8395ACE82566506900162275 /* LNPopupUI in Frameworks */,
 				8340B9CB25654B7500C4FF7F /* SDWebImageSwiftUI in Frameworks */,
 				83FF3DF725659D30008F3EBE /* NeumorphismUI in Frameworks */,
-				8340B9C62564AE0000C4FF7F /* OAuthSwift in Frameworks */,
 				A6F7A2C3BE954683669103E0 /* Pods_WakaTime_Tracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +113,7 @@
 			children = (
 				8340B9AE2564A98600C4FF7F /* WakaTime_TrackerApp.swift */,
 				8340B9B02564A98600C4FF7F /* ContentView.swift */,
+				8381EA262566DAFA0079D828 /* UserDetailsView.swift */,
 				833D0578256553F700B9265E /* CellRowView.swift */,
 				833D05722565538E00B9265E /* WakaTimeNetwork.swift */,
 				833D0575256553C700B9265E /* Utilits */,
@@ -158,11 +161,11 @@
 			);
 			name = "WakaTime Tracker";
 			packageProductDependencies = (
-				8340B9C52564AE0000C4FF7F /* OAuthSwift */,
 				8340B9CA25654B7500C4FF7F /* SDWebImageSwiftUI */,
 				83FF3DEE25659062008F3EBE /* SwiftUIRefresh */,
 				83FF3DF625659D30008F3EBE /* NeumorphismUI */,
 				8395ACE72566506900162275 /* LNPopupUI */,
+				8381EA29256743150079D828 /* SwiftUICharts */,
 			);
 			productName = "WakaTime Tracker";
 			productReference = 8340B9AB2564A98600C4FF7F /* WakaTime Tracker.app */;
@@ -195,11 +198,11 @@
 			);
 			mainGroup = 8340B9A22564A98600C4FF7F;
 			packageReferences = (
-				8340B9C42564AE0000C4FF7F /* XCRemoteSwiftPackageReference "OAuthSwift" */,
 				8340B9C925654B7500C4FF7F /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				83FF3DED25659062008F3EBE /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */,
 				83FF3DF525659D30008F3EBE /* XCRemoteSwiftPackageReference "NeumorphismUI" */,
 				8395ACE62566506900162275 /* XCRemoteSwiftPackageReference "LNPopupUI" */,
+				8381EA28256743150079D828 /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = 8340B9AC2564A98600C4FF7F /* Products */;
 			projectDirPath = "";
@@ -269,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8381EA272566DAFA0079D828 /* UserDetailsView.swift in Sources */,
 				8340B9CE25654CD000C4FF7F /* ActivityIndicator+Extens.swift in Sources */,
 				8340B9BF2564A99300C4FF7F /* Model.swift in Sources */,
 				8340B9B12564A98600C4FF7F /* ContentView.swift in Sources */,
@@ -467,20 +471,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8340B9C42564AE0000C4FF7F /* XCRemoteSwiftPackageReference "OAuthSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/OAuthSwift/OAuthSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.2;
-			};
-		};
 		8340B9C925654B7500C4FF7F /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.5.0;
+			};
+		};
+		8381EA28256743150079D828 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
 			};
 		};
 		8395ACE62566506900162275 /* XCRemoteSwiftPackageReference "LNPopupUI" */ = {
@@ -510,15 +514,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8340B9C52564AE0000C4FF7F /* OAuthSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8340B9C42564AE0000C4FF7F /* XCRemoteSwiftPackageReference "OAuthSwift" */;
-			productName = OAuthSwift;
-		};
 		8340B9CA25654B7500C4FF7F /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8340B9C925654B7500C4FF7F /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		8381EA29256743150079D828 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8381EA28256743150079D828 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
 		};
 		8395ACE72566506900162275 /* LNPopupUI */ = {
 			isa = XCSwiftPackageProductDependency;

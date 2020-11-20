@@ -69,3 +69,58 @@ struct User: Codable, Hashable {
 
 
 
+enum LanguageSelection: String, CaseIterable {
+    case Bash
+    case C
+    case Cocoa
+    case CSS
+    case PHP
+    case Dart
+    case Ruby
+    case SQL
+    case Svelte
+    case Lua
+    case GraphQL
+    case Python
+    case Groovy
+    case Swift
+    case YAML
+    case Vue
+    case HTML
+    case JSON
+    case XML
+    case TypeScript
+    case Kotlin
+    case INI
+    case Java
+    case JavaScript
+    
+    var languageName: String {
+        switch self {
+        case .Bash: return "Bash"
+        case .C: return "Bash"
+        case .Cocoa: return "C#"
+        case .CSS: return "Cocoa"
+        case .PHP: return "CSS"
+        case .Dart: return "PHP"
+        case .Ruby: return "Dart"
+        case .SQL: return "SQL"
+        case .Svelte: return "Svelte"
+        case .Lua: return "Lua"
+        case .GraphQL: return "GraphQL"
+        case .Python: return "Python"
+        case .Groovy: return "Groovy"
+        case .Swift: return "Swift"
+        case .YAML: return "YAML"
+        case .Vue: return "Vue.js"
+        case .HTML: return "HTML"
+        case .JSON: return "JSON"
+        case .XML: return "XML"
+        case .TypeScript: return "TypeScript"
+        case .Kotlin: return "Kotlin"
+        case .INI: return "INI"
+        case .Java: return "Java"
+        case .JavaScript: return "JavaScript"
+        }
+    }
+}
