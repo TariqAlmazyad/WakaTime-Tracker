@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8310EDE725686E24009FD89B /* coding.json in Resources */ = {isa = PBXBuildFile; fileRef = 8310EDE625686E24009FD89B /* coding.json */; };
+		8310EDE925686E45009FD89B /* LottieAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310EDE825686E45009FD89B /* LottieAnimationView.swift */; };
+		8310EDED2568705C009FD89B /* WakaTimeRefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310EDEC2568705C009FD89B /* WakaTimeRefView.swift */; };
 		833D05732565538E00B9265E /* WakaTimeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833D05722565538E00B9265E /* WakaTimeNetwork.swift */; };
 		833D0579256553F700B9265E /* CellRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833D0578256553F700B9265E /* CellRowView.swift */; };
 		8340B9AF2564A98600C4FF7F /* WakaTime_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B9AE2564A98600C4FF7F /* WakaTime_TrackerApp.swift */; };
@@ -16,6 +19,7 @@
 		8340B9BF2564A99300C4FF7F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B9BE2564A99300C4FF7F /* Model.swift */; };
 		8340B9CB25654B7500C4FF7F /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8340B9CA25654B7500C4FF7F /* SDWebImageSwiftUI */; };
 		8340B9CE25654CD000C4FF7F /* ActivityIndicator+Extens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B9CD25654CD000C4FF7F /* ActivityIndicator+Extens.swift */; };
+		83792F4825687C9000AEE0FA /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83792F4725687C9000AEE0FA /* MailView.swift */; };
 		8381EA272566DAFA0079D828 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381EA262566DAFA0079D828 /* UserDetailsView.swift */; };
 		8381EA2A256743150079D828 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 8381EA29256743150079D828 /* SwiftUICharts */; };
 		8395ACE82566506900162275 /* LNPopupUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8395ACE72566506900162275 /* LNPopupUI */; };
@@ -40,6 +44,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8310EDE625686E24009FD89B /* coding.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coding.json; sourceTree = "<group>"; };
+		8310EDE825686E45009FD89B /* LottieAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieAnimationView.swift; sourceTree = "<group>"; };
+		8310EDEC2568705C009FD89B /* WakaTimeRefView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakaTimeRefView.swift; sourceTree = "<group>"; };
 		833D05722565538E00B9265E /* WakaTimeNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakaTimeNetwork.swift; sourceTree = "<group>"; };
 		833D0578256553F700B9265E /* CellRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellRowView.swift; sourceTree = "<group>"; };
 		8340B9AB2564A98600C4FF7F /* WakaTime Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WakaTime Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +57,7 @@
 		8340B9B72564A98900C4FF7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8340B9BE2564A99300C4FF7F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8340B9CD25654CD000C4FF7F /* ActivityIndicator+Extens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityIndicator+Extens.swift"; sourceTree = "<group>"; };
+		83792F4725687C9000AEE0FA /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		8381EA262566DAFA0079D828 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		847935B803B749FD31EC3C97 /* Pods_WakaTime_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WakaTime_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA18A51F6F629C2688F4B0D /* Pods-WakaTime Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WakaTime Tracker.release.xcconfig"; path = "Target Support Files/Pods-WakaTime Tracker/Pods-WakaTime Tracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +88,15 @@
 				BDA18A51F6F629C2688F4B0D /* Pods-WakaTime Tracker.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8310EDE525686E14009FD89B /* JSONAnimation files */ = {
+			isa = PBXGroup;
+			children = (
+				8310EDE625686E24009FD89B /* coding.json */,
+				8310EDE825686E45009FD89B /* LottieAnimationView.swift */,
+			);
+			path = "JSONAnimation files";
 			sourceTree = "<group>";
 		};
 		833D0575256553C700B9265E /* Utilits */ = {
@@ -113,9 +130,12 @@
 			children = (
 				8340B9AE2564A98600C4FF7F /* WakaTime_TrackerApp.swift */,
 				8340B9B02564A98600C4FF7F /* ContentView.swift */,
+				8310EDEC2568705C009FD89B /* WakaTimeRefView.swift */,
 				8381EA262566DAFA0079D828 /* UserDetailsView.swift */,
+				83792F4725687C9000AEE0FA /* MailView.swift */,
 				833D0578256553F700B9265E /* CellRowView.swift */,
 				833D05722565538E00B9265E /* WakaTimeNetwork.swift */,
+				8310EDE525686E14009FD89B /* JSONAnimation files */,
 				833D0575256553C700B9265E /* Utilits */,
 				8340B9BE2564A99300C4FF7F /* Model.swift */,
 				8340B9B22564A98900C4FF7F /* Assets.xcassets */,
@@ -219,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8340B9B62564A98900C4FF7F /* Preview Assets.xcassets in Resources */,
+				8310EDE725686E24009FD89B /* coding.json in Resources */,
 				8340B9B32564A98900C4FF7F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,13 +293,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8310EDE925686E45009FD89B /* LottieAnimationView.swift in Sources */,
 				8381EA272566DAFA0079D828 /* UserDetailsView.swift in Sources */,
 				8340B9CE25654CD000C4FF7F /* ActivityIndicator+Extens.swift in Sources */,
 				8340B9BF2564A99300C4FF7F /* Model.swift in Sources */,
 				8340B9B12564A98600C4FF7F /* ContentView.swift in Sources */,
+				8310EDED2568705C009FD89B /* WakaTimeRefView.swift in Sources */,
 				8340B9AF2564A98600C4FF7F /* WakaTime_TrackerApp.swift in Sources */,
 				833D05732565538E00B9265E /* WakaTimeNetwork.swift in Sources */,
 				833D0579256553F700B9265E /* CellRowView.swift in Sources */,
+				83792F4825687C9000AEE0FA /* MailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,7 +5,6 @@ target 'WakaTime Tracker' do
   use_frameworks!
 
   # Pods for WakaTime Tracker
-pod 'AeroGearHttp'
-
+pod 'lottie-ios'
 
 end

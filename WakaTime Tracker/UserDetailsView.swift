@@ -8,6 +8,7 @@
 import SwiftUI
 import NeumorphismUI
 import SDWebImageSwiftUI
+import MessageUI
 
 struct UserDetailsView: View {
     let user: UserStats
@@ -192,17 +193,18 @@ struct TotalHoursView: View {
 
 struct UserInfoView: View {
     let user: UserStats
+    
+    @State var result: Result<MFMailComposeResult, Error>? = nil
+    @State var isShowingMailView = false
+    
     var body: some View {
         VStack(spacing: 8){
-            Text(user.user.display_name)
+            Text("\(user.user.display_name),  rank#\(user.rank)")
                 .font(.system(size: 20, weight: .bold, design: .default))
                 .foregroundColor(Color(.white))
-            Text(user.user.email ?? "no email")
+            Text(user.user.email ?? "no email provided")
                 .font(.system(size: 14, weight: .semibold, design: .default))
                 .foregroundColor(Color(.lightGray))
-                .onTapGesture {
-                    print("email did select ")
-                }
         }
     }
 }

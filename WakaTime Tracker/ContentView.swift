@@ -30,7 +30,7 @@ struct ContentView: View {
                         HStack{
                             Spacer()
                             VStack(alignment: .center){
-                                ProgressView("Downloading...", value: viewModel.progress, total: 1)
+                                ProgressView("Downloading WakaTime users...", value: viewModel.progress, total: 1)
                                     .progressViewStyle(LinearProgressViewStyle())
                                     .animation(Animation.easeIn(duration: 5))
                                 Text("\(String(format: "%.2f", viewModel.progress * 100))")
@@ -71,8 +71,7 @@ struct ContentView: View {
             if let user = user {
                 UserDetailsView(user: user) /* <-- pass user here as well*/
             } else {
-                Text("Hello world")
-                    .foregroundColor(.white)
+                WakaTimeRefView()
             }
             
         })
@@ -87,6 +86,14 @@ struct ContentView: View {
                     .multilineTextAlignment(.center)
                     .padding(6)
                     .padding(.top, 8)
+                Button(action: {
+                    self.isPopupOpen.toggle()
+                }, label: {
+                    Image(systemName: "info.circle")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(Color(.lightGray))
+                })
             }
         }
     }
