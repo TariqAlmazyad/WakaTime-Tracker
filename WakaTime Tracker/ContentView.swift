@@ -63,7 +63,9 @@ struct ContentView: View {
             .ignoresSafeArea()
         }
         
-        .popup(isBarPresented: $isBarPresented, isPopupOpen: $isPopupOpen, popupContent: {
+        .popup(isBarPresented: $isBarPresented, isPopupOpen: $isPopupOpen, onClose: {
+            self.user = nil
+        } , popupContent: {
             if let user = user {
                 UserDetailsView(user: user) /* <-- pass user here as well*/
             } else {
@@ -94,6 +96,7 @@ struct ContentView: View {
                 })
             }
         }
+        
         .popupBarStyle(.default)
     }
 }

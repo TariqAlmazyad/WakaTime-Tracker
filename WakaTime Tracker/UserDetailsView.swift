@@ -12,83 +12,34 @@ import SDWebImageSwiftUI
 struct UserDetailsView: View {
     let user: UserStats
     @State private var progress: Double = 0.0
-    
-    
+    let columns: [GridItem] = [GridItem(.flexible()),
+                               GridItem(.flexible()),]
     var body: some View{
         ScrollView(.vertical, showsIndicators: false) {
             neumorphism.color.edgesIgnoringSafeArea(.all)
+            
             VStack(spacing: 12){
+                ProfileImageView(user: user)// <- end of ZStck
                 
-                ZStack{
-                    
-                    Capsule(style: .circular)
-                        .fill(neumorphism.color)
-                        .neumorphismConcave(shapeType: .capsule, color: nil)
-                        .frame(width: 100, height: 100)
-                    
-                    WebImage(url: URL(string: user.user.photo), isAnimating: Binding.constant(true))
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 76, height: 76)
-                        .clipShape(Circle())
-                }// <- end of ZStck
+                UserInfoView(user: user)
                 
-                Text(user.user.display_name)
-                    .font(.system(size: 20, weight: .bold, design: .default))
-                    .foregroundColor(Color(.white))
-                VStack(spacing: 8){
-                    Text("Total hours coded over the last 7 days:")
-                        .font(.system(size: 12, weight: .semibold, design: .default))
-                        .foregroundColor(Color.gray)
-                    Text(user.running_total.human_readable_total)
-                        .font(.system(size: 16, weight: .bold, design: .default))
-                        .foregroundColor(Color(.lightGray))
-                }// <- end of VStack
+                TotalHoursView(user: user)
                 
-                ZStack {
-                    
-                    NeumorphismButton(
-                        shapeType: .roundedRectangle(cornerRadius: 100),
-                        normalImage: Image(systemName: "checkmark.circle"),
-                        selectedImage: Image(systemName: ""),
-                        width: 120,
-                        height: 120,
-                        imageWidth: 0,
-                        imageHeight: 0
-                    )
-                    
-                    Circle()
-                        .stroke(lineWidth: 5)
-                        .opacity(0.2)
-                        .foregroundColor(Color.purple)
-                        .frame(width: 100, height: 100)
-                    Circle()
-                        .trim(from: 0.0, to: CGFloat(self.progress / 100))
-                        .stroke(style: StrokeStyle(lineWidth: 5.0, lineCap: .round,
-                                                   lineJoin: .round))
-                        .frame(width: 100, height: 100)
-                        .foregroundColor(Color.purple)
-                        .animation(Animation.easeIn(duration: 2))
-                    Text("% \(String(format: "%.2f", self.progress))")
-                }
-                
-                Button(action: {
-                    Timer.scheduledTimer(withTimeInterval: 0.0001, repeats: true) { timer in
-                        self.progress += 0.1234
-                        if self.progress >= ((user.running_total.languages.first?.total_seconds ?? 00) / 3600) {
-                            timer.invalidate()
-                        }
+                LazyVGrid(columns: columns, spacing: 80){
+                    ForEach(user.running_total.languages.prefix(4), id:\.self) { language in
+                        LanguageProgressView(user: user, language: language)
+                            .padding(.top, 40)
                     }
-                }, label: {
-                    Text("Button")
-                }).padding()
+                }
                 
             }.padding(.vertical, 80) // <- end of VStack
             
         }
         .background(neumorphism.color)
         .ignoresSafeArea()
+        
     }
+    
 }
 struct UserDetailsView_Previews: PreviewProvider {
     static var previews: some View {
@@ -102,11 +53,139 @@ struct UserDetailsView_Previews: PreviewProvider {
                                                                            total_seconds: 32)]),
                                     user: .init(full_name: "Tariq Almazyad",
                                                 display_name: "Tariq Almazyad",
-                                                photo: "")))
+                                                photo: "", email: nil)))
             .environmentObject(neumorphism)
-            
-            //        ContentView()
             .preferredColorScheme(.dark)
-        //            .environmentObject(neumorphism)
+        
+    }
+}
+
+
+
+//                        Print("progress \(progress)")
+//                        Print("progress 22    \(((user.running_total.languages.first?.total_seconds ?? 00) / 3600) / (user.running_total.total_seconds / 3600))")
+
+//                            self.progress = ((user.running_total.languages.first?.total_seconds ?? 00) / 3600) / (user.running_total.total_seconds / 3600) * 100
+//                Button(action: {
+//
+//                }, label: {
+//                    Text("Button")
+////                    Print("Total percentage is \( ( (user.running_total.languages.first?.total_seconds ?? 0.0) / 3600) / (user.running_total.total_seconds / 3600))")
+////                    Print("Total percentage is \((user.running_total.languages.first?.total_seconds ?? 00) / 3600)")
+//                }).padding()
+
+struct ProfileImageView: View {
+    let user: UserStats
+    var body: some View {
+        ZStack{
+            Capsule(style: .circular)
+                .fill(neumorphism.color)
+                .neumorphismConcave(shapeType: .capsule, color: nil)
+                .frame(width: 100, height: 100)
+            
+            WebImage(url: URL(string: user.user.photo), isAnimating: Binding.constant(true))
+                .resizable()
+                .scaledToFit()
+                .frame(width: 76, height: 76)
+                .clipShape(Circle())
+        }
+    }
+}
+
+struct LanguageProgressView: View {
+    let user: UserStats
+    let language: Languages
+    @State var progress: Double = 0.0
+    let randomColor = Color(red: .random(in: 0...1),
+                            green: .random(in: 0...1),
+                            blue: .random(in: 0...1))
+    var body: some View {
+        VStack {
+            ZStack {
+                NeumorphismButton(
+                    shapeType: .roundedRectangle(cornerRadius: 100),
+                    normalImage: Image(systemName: "checkmark.circle"),
+                    selectedImage: Image(systemName: ""),
+                    width: 120,
+                    height: 120,
+                    imageWidth: 0,
+                    imageHeight: 0
+                )
+                
+                Circle()
+                    .stroke(lineWidth: 5)
+                    .opacity(0.2)
+                    .foregroundColor(randomColor.opacity(0.7))
+                    .frame(width: 100, height: 100)
+                Circle()
+                    .trim(from: 0.0, to: CGFloat(self.progress / 100))
+                    .stroke(style: StrokeStyle(lineWidth: 5.0, lineCap: .round,
+                                               lineJoin: .round))
+                    .frame(width: 100, height: 100)
+                    .foregroundColor(randomColor)
+                    .animation(Animation.easeIn(duration: 2))
+                    .shadow(color: randomColor, radius: 10, x: 0.0, y: 0.0)
+                
+                VStack(alignment: .center) {
+                    Image(language.name)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 30, height: 30)
+                    Text("% \(String(format: "%.2f", self.progress))")
+                        .padding(.top, 4)
+                }.padding(.bottom)
+                
+            }
+            .onAppear(perform: {
+                Timer.scheduledTimer(withTimeInterval: 0.002, repeats: true) { timer in
+                    self.progress += 0.1234
+                    if self.progress >= languageProgress(language.total_seconds)
+                    {
+                        timer.invalidate()
+                    }
+                    
+                }
+            })
+            VStack(spacing: 12) {
+                Text("Hours Coded")
+                    .font(.system(size: 12, weight: .semibold, design: .default))
+                    .foregroundColor(Color.gray)
+                Text("\(Double(language.total_seconds ).asString(style: .full))")
+                Print("\(Double(language.total_seconds ).asString(style: .full))")
+            }.padding(.top)
+        }
+    }
+    
+    private func languageProgress(_ totalSeconds: Double) -> Double{
+        return ((totalSeconds) / 3600) / (user.running_total.total_seconds / 3600) * 100
+    }
+}
+
+struct TotalHoursView: View {
+    let user: UserStats
+    var body: some View {
+        VStack(spacing: 8){
+            Text("Total hours coded over the last 7 days:")
+                .font(.system(size: 12, weight: .semibold, design: .default))
+                .foregroundColor(Color.gray)
+            Text(user.running_total.human_readable_total)
+                .font(.system(size: 16, weight: .bold, design: .default))
+                .foregroundColor(Color(.lightGray))
+            
+        }
+    }
+}
+
+struct UserInfoView: View {
+    let user: UserStats
+    var body: some View {
+        VStack(spacing: 8){
+            Text(user.user.display_name)
+                .font(.system(size: 20, weight: .bold, design: .default))
+                .foregroundColor(Color(.white))
+            Text(user.user.email ?? "no email")
+                .font(.system(size: 14, weight: .semibold, design: .default))
+                .foregroundColor(Color(.lightGray))
+        }
     }
 }

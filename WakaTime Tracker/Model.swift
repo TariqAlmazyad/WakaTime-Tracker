@@ -56,6 +56,7 @@ struct User: Codable, Hashable {
     let full_name: String
     let display_name:  String
     let photo:  String
+    let email: String?
 }
 
 
