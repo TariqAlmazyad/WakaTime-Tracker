@@ -24,6 +24,7 @@
 		8381EA2A256743150079D828 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 8381EA29256743150079D828 /* SwiftUICharts */; };
 		8395ACE82566506900162275 /* LNPopupUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8395ACE72566506900162275 /* LNPopupUI */; };
 		8395ACE92566506900162275 /* LNPopupUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 8395ACE72566506900162275 /* LNPopupUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		83BC5C952568AFEA00900C05 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BC5C942568AFEA00900C05 /* StatusBarView.swift */; };
 		83FF3DEF25659062008F3EBE /* SwiftUIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 83FF3DEE25659062008F3EBE /* SwiftUIRefresh */; };
 		83FF3DF725659D30008F3EBE /* NeumorphismUI in Frameworks */ = {isa = PBXBuildFile; productRef = 83FF3DF625659D30008F3EBE /* NeumorphismUI */; };
 		A6F7A2C3BE954683669103E0 /* Pods_WakaTime_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847935B803B749FD31EC3C97 /* Pods_WakaTime_Tracker.framework */; };
@@ -59,6 +60,7 @@
 		8340B9CD25654CD000C4FF7F /* ActivityIndicator+Extens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityIndicator+Extens.swift"; sourceTree = "<group>"; };
 		83792F4725687C9000AEE0FA /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		8381EA262566DAFA0079D828 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
+		83BC5C942568AFEA00900C05 /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
 		847935B803B749FD31EC3C97 /* Pods_WakaTime_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WakaTime_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA18A51F6F629C2688F4B0D /* Pods-WakaTime Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WakaTime Tracker.release.xcconfig"; path = "Target Support Files/Pods-WakaTime Tracker/Pods-WakaTime Tracker.release.xcconfig"; sourceTree = "<group>"; };
 		E410A0B151CEDD7864FCE002 /* Pods-WakaTime Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WakaTime Tracker.debug.xcconfig"; path = "Target Support Files/Pods-WakaTime Tracker/Pods-WakaTime Tracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				8340B9AE2564A98600C4FF7F /* WakaTime_TrackerApp.swift */,
 				8340B9B02564A98600C4FF7F /* ContentView.swift */,
+				83BC5C942568AFEA00900C05 /* StatusBarView.swift */,
 				8310EDEC2568705C009FD89B /* WakaTimeRefView.swift */,
 				8381EA262566DAFA0079D828 /* UserDetailsView.swift */,
 				83792F4725687C9000AEE0FA /* MailView.swift */,
@@ -299,6 +302,7 @@
 				8340B9BF2564A99300C4FF7F /* Model.swift in Sources */,
 				8340B9B12564A98600C4FF7F /* ContentView.swift in Sources */,
 				8310EDED2568705C009FD89B /* WakaTimeRefView.swift in Sources */,
+				83BC5C952568AFEA00900C05 /* StatusBarView.swift in Sources */,
 				8340B9AF2564A98600C4FF7F /* WakaTime_TrackerApp.swift in Sources */,
 				833D05732565538E00B9265E /* WakaTimeNetwork.swift in Sources */,
 				833D0579256553F700B9265E /* CellRowView.swift in Sources */,
@@ -443,7 +447,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ARMobileApps.org.WakaTime-Tracker";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ARMobileApps.org.WakaTimeTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -468,7 +472,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ARMobileApps.org.WakaTime-Tracker";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ARMobileApps.org.WakaTimeTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

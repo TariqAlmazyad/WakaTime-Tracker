@@ -65,6 +65,8 @@ struct ContentView: View {
             .ignoresSafeArea()
         }
         
+        .statusBarStyle(.lightContent)
+        
         .popup(isBarPresented: $isBarPresented, isPopupOpen: $isPopupOpen, onClose: {
             self.user = nil
         } , popupContent: {
