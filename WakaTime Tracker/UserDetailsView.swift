@@ -147,8 +147,8 @@ struct LanguageProgressView: View {
                 
             }
             .onAppear{
-                Timer.scheduledTimer(withTimeInterval: 0.002, repeats: true) { timer in
-                    self.progress += 0.1234
+                Timer.scheduledTimer(withTimeInterval: 0.0002, repeats: true) { timer in
+                    self.progress += 1.1234
                     if self.progress >= languageProgress(language.total_seconds)
                     {
                         self.progress = languageProgress(language.total_seconds)
