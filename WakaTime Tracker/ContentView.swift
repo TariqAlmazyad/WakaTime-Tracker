@@ -30,10 +30,9 @@ struct ContentView: View {
                         HStack{
                             Spacer()
                             VStack(alignment: .center){
-                                ProgressView("Downloading WakaTime users...", value: viewModel.progress, total: 1)
-                                    .progressViewStyle(LinearProgressViewStyle())
-                                    .animation(Animation.easeIn(duration: 5))
-                                Text("\(String(format: "%.2f", viewModel.progress * 100))")
+                                ActivityIndicator()
+                                //                                Text("\(String(format: "%.2f", viewModel.progress * 100))")
+                                Text("Loading...")
                                     .foregroundColor(.white)
                                     .font(.system(size: 16, weight: .semibold))
                                     .multilineTextAlignment(.center)
@@ -99,7 +98,6 @@ struct ContentView: View {
             }
         }
     }
-    
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

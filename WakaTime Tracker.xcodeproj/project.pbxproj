@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		830ED264256D2BA0005DD739 /* ListPagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830ED263256D2BA0005DD739 /* ListPagination.swift */; };
+		830ED266256D2C33005DD739 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830ED265256D2C33005DD739 /* SpinnerView.swift */; };
 		8310EDE725686E24009FD89B /* coding.json in Resources */ = {isa = PBXBuildFile; fileRef = 8310EDE625686E24009FD89B /* coding.json */; };
 		8310EDE925686E45009FD89B /* LottieAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310EDE825686E45009FD89B /* LottieAnimationView.swift */; };
 		8310EDED2568705C009FD89B /* WakaTimeRefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310EDEC2568705C009FD89B /* WakaTimeRefView.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		830ED263256D2BA0005DD739 /* ListPagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPagination.swift; sourceTree = "<group>"; };
+		830ED265256D2C33005DD739 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		8310EDE625686E24009FD89B /* coding.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coding.json; sourceTree = "<group>"; };
 		8310EDE825686E45009FD89B /* LottieAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieAnimationView.swift; sourceTree = "<group>"; };
 		8310EDEC2568705C009FD89B /* WakaTimeRefView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakaTimeRefView.swift; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 				83BC5C942568AFEA00900C05 /* StatusBarView.swift */,
 				8310EDEC2568705C009FD89B /* WakaTimeRefView.swift */,
 				8381EA262566DAFA0079D828 /* UserDetailsView.swift */,
+				830ED263256D2BA0005DD739 /* ListPagination.swift */,
+				830ED265256D2C33005DD739 /* SpinnerView.swift */,
 				83792F4725687C9000AEE0FA /* MailView.swift */,
 				833D0578256553F700B9265E /* CellRowView.swift */,
 				833D05722565538E00B9265E /* WakaTimeNetwork.swift */,
@@ -297,10 +303,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8310EDE925686E45009FD89B /* LottieAnimationView.swift in Sources */,
+				830ED266256D2C33005DD739 /* SpinnerView.swift in Sources */,
 				8381EA272566DAFA0079D828 /* UserDetailsView.swift in Sources */,
 				8340B9CE25654CD000C4FF7F /* ActivityIndicator+Extens.swift in Sources */,
 				8340B9BF2564A99300C4FF7F /* Model.swift in Sources */,
 				8340B9B12564A98600C4FF7F /* ContentView.swift in Sources */,
+				830ED264256D2BA0005DD739 /* ListPagination.swift in Sources */,
 				8310EDED2568705C009FD89B /* WakaTimeRefView.swift in Sources */,
 				83BC5C952568AFEA00900C05 /* StatusBarView.swift in Sources */,
 				8340B9AF2564A98600C4FF7F /* WakaTime_TrackerApp.swift in Sources */,
@@ -364,7 +372,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -419,7 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -436,17 +444,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.1;
+				CURRENT_PROJECT_VERSION = 0.2;
 				DEVELOPMENT_ASSET_PATHS = "\"WakaTime Tracker/Preview Content\"";
 				DEVELOPMENT_TEAM = UGDUJASRTY;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "WakaTime Tracker/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ARMobileApps.org.WakaTimeTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -461,17 +469,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.1;
+				CURRENT_PROJECT_VERSION = 0.2;
 				DEVELOPMENT_ASSET_PATHS = "\"WakaTime Tracker/Preview Content\"";
 				DEVELOPMENT_TEAM = UGDUJASRTY;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "WakaTime Tracker/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ARMobileApps.org.WakaTimeTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

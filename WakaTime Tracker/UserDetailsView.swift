@@ -58,6 +58,7 @@ struct UserDetailsView_Previews: PreviewProvider {
             .environmentObject(neumorphism)
             .preferredColorScheme(.dark)
         
+        
     }
 }
 
