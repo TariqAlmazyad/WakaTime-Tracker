@@ -24,7 +24,7 @@ struct WakaTime_TrackerApp: App {
     var body: some Scene {
         WindowGroup {
             RootView {
-                ContentView()
+                HomeView()
                     .preferredColorScheme(.dark)
                     .environmentObject(neumorphism)
             }

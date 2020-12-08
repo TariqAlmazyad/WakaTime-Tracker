@@ -9,7 +9,7 @@ import SwiftUI
 import NeumorphismUI
 import LNPopupUI
 
-struct ContentView: View {
+struct HomeView: View {
     
     @ObservedObject var viewModel = WakaTimeNetwork()
     @State private var shouldShowFullScreenModel = false
@@ -19,6 +19,7 @@ struct ContentView: View {
     @State private var user: UserStats?
     @State private var searchedUser: String = ""
     @State private var isSearching: Bool = false
+    
     let columns: [GridItem] = [GridItem(.flexible()),
                                GridItem(.flexible()),]
     var body: some View {
@@ -27,7 +28,8 @@ struct ContentView: View {
                 neumorphism.color.edgesIgnoringSafeArea(.all)
 
                 SearchBarView(searchedUser: $searchedUser,
-                              isSearching: $isSearching)
+                              isSearching: $isSearching,
+                              isBarPresented: $isBarPresented)
                     .offset(y: UIScreen.screenHeight < 800 ? 86 : 110)
                  
                 ZStack{
@@ -43,6 +45,7 @@ struct ContentView: View {
                                         self.user = user
                                         self.isPopupOpen.toggle()
                                         self.hideKeyboard()
+                                        self.isBarPresented = true
                                     }
                             }
                         }
@@ -94,7 +97,7 @@ struct ContentView: View {
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeView()
             .preferredColorScheme(.dark)
             .environmentObject(neumorphism)
     }
@@ -109,13 +112,16 @@ let neumorphism = NeumorphismManager(
 struct SearchBarView: View {
     @Binding var searchedUser: String
     @Binding var isSearching: Bool
+    @Binding var isBarPresented: Bool
     var body: some View{
         ZStack{
             Capsule(style: .circular)
                 .fill(neumorphism.color)
                 .neumorphismConcave(shapeType: .capsule, color: nil)
             
-            TextField("Search for developer...", text: $searchedUser)
+            TextField("Search for developer...", text: $searchedUser, onEditingChanged: { isEditing in
+                isBarPresented = false
+            })
                 .foregroundColor(.white)
                 .padding(.leading, 40)
                 .onTapGesture {
