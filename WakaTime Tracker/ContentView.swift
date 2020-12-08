@@ -12,19 +12,51 @@ import LNPopupUI
 struct ContentView: View {
     
     @ObservedObject var viewModel = WakaTimeNetwork()
-    @State var shouldShowFullScreenModel = false
-    @State var isShowing = true
-    @State var isBarPresented = true
-    @State var isPopupOpen = false
-    
-    @State var user: UserStats?
-    
+    @State private var shouldShowFullScreenModel = false
+    @State private var isShowing = true
+    @State private var isBarPresented = true
+    @State private var isPopupOpen = false
+    @State private var user: UserStats?
+    @State private var searchedUser: String = ""
+    @State private var isSearching: Bool = false
     let columns: [GridItem] = [GridItem(.flexible()),
                                GridItem(.flexible()),]
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 neumorphism.color.edgesIgnoringSafeArea(.all)
+
+                ZStack{
+                    Capsule(style: .circular)
+                        .fill(neumorphism.color)
+                        .neumorphismConcave(shapeType: .capsule, color: nil)
+                    
+                    TextField("Search for developer...", text: $searchedUser)
+                        .padding(.leading, 40)
+                        .onTapGesture {
+                            isSearching = true
+                        }
+                        
+                }
+                .frame(width: UIScreen.main.bounds.width - 20, height: 50)
+                .background(neumorphism.color)
+                .overlay(
+                    HStack{
+                        Image(systemName: "magnifyingglass")
+                        Spacer()
+                        if isSearching{
+                            Button(action: {
+                                searchedUser = ""
+                                isSearching = false
+                            }, label: {
+                                Image(systemName: "xmark.circle.fill")
+                                    .foregroundColor(.white)
+                            })
+                        }
+                    }.padding(.horizontal)
+                )
+                .offset(y: 120)
+                
                 ZStack{
                     if viewModel.isLoading {
                         HStack{
@@ -45,8 +77,9 @@ struct ContentView: View {
                             Spacer()
                         }
                     } else {
+   
                         LazyVGrid(columns: columns, spacing: 80){
-                            ForEach(viewModel.wakaTimeData?.data ?? [], id: \.self) { user in
+                            ForEach(viewModel.wakaTimeData?.data.filter({$0.user.display_name.contains(searchedUser) || searchedUser.isEmpty}) ?? [], id: \.self) { user in
                                 CellRowView(user: user)
                                     .onTapGesture {
                                         self.user = user

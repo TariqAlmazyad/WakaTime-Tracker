@@ -50,8 +50,8 @@ class WakaTimeNetwork: ObservableObject {
                 guard let data = data else {return}
                 do {
                     let users = try JSONDecoder().decode(WakaTimeData.self, from: data)
-                    let newData = Array(arrayLiteral: users.data.start)
-                    
+                    self.wakaTimeData = users
+
                     self.isLoading = false
                 } catch (let error) {
                     print("failed to decode the data with \(error.localizedDescription)")
@@ -69,4 +69,3 @@ class WakaTimeNetwork: ObservableObject {
     }
     
 }
-
