@@ -26,67 +26,27 @@ struct ContentView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 neumorphism.color.edgesIgnoringSafeArea(.all)
 
-                ZStack{
-                    Capsule(style: .circular)
-                        .fill(neumorphism.color)
-                        .neumorphismConcave(shapeType: .capsule, color: nil)
-                    
-                    TextField("Search for developer...", text: $searchedUser)
-                        .padding(.leading, 40)
-                        .onTapGesture {
-                            isSearching = true
-                        }
-                        
-                }
-                .frame(width: UIScreen.main.bounds.width - 20, height: 50)
-                .background(neumorphism.color)
-                .overlay(
-                    HStack{
-                        Image(systemName: "magnifyingglass")
-                        Spacer()
-                        if isSearching{
-                            Button(action: {
-                                searchedUser = ""
-                                isSearching = false
-                            }, label: {
-                                Image(systemName: "xmark.circle.fill")
-                                    .foregroundColor(.white)
-                            })
-                        }
-                    }.padding(.horizontal)
-                )
-                .offset(y: 120)
-                
+                SearchBarView(searchedUser: $searchedUser,
+                              isSearching: $isSearching)
+                    .offset(y: UIScreen.screenHeight < 800 ? 86 : 110)
+                 
                 ZStack{
                     if viewModel.isLoading {
-                        HStack{
-                            Spacer()
-                            VStack(alignment: .center){
-                                ActivityIndicator()
-                                //                                Text("\(String(format: "%.2f", viewModel.progress * 100))")
-                                Text("Loading...")
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 16, weight: .semibold))
-                                    .multilineTextAlignment(.center)
-                                    .lineLimit(nil)
-                            }
-                            .frame(width: 300, height: 140)
-                            .padding()
-                            .background(neumorphism.color)
-                            .cornerRadius(80)
-                            Spacer()
-                        }
+                        LoadingIndicatorView()
                     } else {
    
                         LazyVGrid(columns: columns, spacing: 80){
-                            ForEach(viewModel.wakaTimeData?.data.filter({$0.user.display_name.contains(searchedUser) || searchedUser.isEmpty}) ?? [], id: \.self) { user in
+                            ForEach(viewModel.wakaTimeData?.data.filter({$0.user.display_name.contains(searchedUser) || searchedUser.isEmpty}
+                            ) ?? [], id: \.self) { user in
                                 CellRowView(user: user)
                                     .onTapGesture {
                                         self.user = user
                                         self.isPopupOpen.toggle()
+                                        self.hideKeyboard()
                                     }
                             }
                         }
+                       
                     }
                 }.padding(.vertical, 140)
                 .padding(.horizontal, 2)
@@ -145,3 +105,63 @@ let neumorphism = NeumorphismManager(
     darkColor: Color(hex: "2C292C")
 )
 
+
+struct SearchBarView: View {
+    @Binding var searchedUser: String
+    @Binding var isSearching: Bool
+    var body: some View{
+        ZStack{
+            Capsule(style: .circular)
+                .fill(neumorphism.color)
+                .neumorphismConcave(shapeType: .capsule, color: nil)
+            
+            TextField("Search for developer...", text: $searchedUser)
+                .foregroundColor(.white)
+                .padding(.leading, 40)
+                .onTapGesture {
+                    isSearching = true
+                }
+                
+        }
+        .frame(width: UIScreen.main.bounds.width - 20, height: 50)
+        .background(neumorphism.color)
+        .overlay(
+            HStack{
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(.gray)
+                Spacer()
+                if isSearching{
+                    Button(action: {
+                        searchedUser = ""
+                        isSearching = false
+                    }, label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(.white)
+                    })
+                }
+            }.padding(.horizontal)
+        )
+    }
+}
+
+struct LoadingIndicatorView: View {
+    var body: some View {
+        HStack{
+            Spacer()
+            VStack(alignment: .center){
+                ActivityIndicator()
+                //                                Text("\(String(format: "%.2f", viewModel.progress * 100))")
+                Text("Loading...")
+                    .foregroundColor(.white)
+                    .font(.system(size: 16, weight: .semibold))
+                    .multilineTextAlignment(.center)
+                    .lineLimit(nil)
+            }
+            .frame(width: 300, height: 140)
+            .padding()
+            .background(neumorphism.color)
+            .cornerRadius(80)
+            Spacer()
+        }
+    }
+}
