@@ -38,7 +38,7 @@ struct HomeView: View {
                     } else {
    
                         LazyVGrid(columns: columns, spacing: 80){
-                            ForEach(viewModel.wakaTimeData?.data.filter({$0.user.display_name.contains(searchedUser) || searchedUser.isEmpty}
+                            ForEach(viewModel.wakaTimeData?.data.filter({$0.user.display_name.contains(searchedUser.lowercased()) || searchedUser.isEmpty}
                             ) ?? [], id: \.self) { user in
                                 CellRowView(user: user)
                                     .onTapGesture {
@@ -51,10 +51,10 @@ struct HomeView: View {
                         }
                        
                     }
-                }.padding(.vertical, 140)
+                }.navigationBarTitle("Top 100", displayMode: .large)
+                .padding(.vertical, 140)
                 .padding(.horizontal, 2)
             }
-            .navigationBarTitle("Top 100", displayMode: .large)
             .padding(.vertical)
             .background(neumorphism.color)
             .ignoresSafeArea()
