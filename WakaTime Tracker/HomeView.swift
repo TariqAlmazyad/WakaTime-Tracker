@@ -38,7 +38,7 @@ struct HomeView: View {
                     } else {
    
                         LazyVGrid(columns: columns, spacing: 80){
-                            ForEach(viewModel.wakaTimeData?.data.filter({$0.user.display_name.contains(searchedUser.lowercased()) || searchedUser.isEmpty}
+                            ForEach(viewModel.wakaTimeData?.data.filter({$0.user.display_name.lowercased().contains(searchedUser.lowercased()) || searchedUser.isEmpty}
                             ) ?? [], id: \.self) { user in
                                 CellRowView(user: user)
                                     .onTapGesture {
@@ -51,7 +51,7 @@ struct HomeView: View {
                         }
                        
                     }
-                }.navigationBarTitle("Top 100", displayMode: .large)
+                }.navigationBarTitle("Top 100", displayMode: isSearching ? .inline : .large )
                 .padding(.vertical, 140)
                 .padding(.horizontal, 2)
             }
@@ -120,14 +120,25 @@ struct SearchBarView: View {
                 .neumorphismConcave(shapeType: .capsule, color: nil)
             
             TextField("Search for developer...", text: $searchedUser, onEditingChanged: { isEditing in
-                isBarPresented = false
+                withAnimation{
+                    isBarPresented = false
+                    isSearching = true
+                }
+            }, onCommit: {
+                
+                withAnimation{
+                    isBarPresented = true
+                    isSearching = false
+                }
             })
+            
                 .foregroundColor(.white)
                 .padding(.leading, 40)
                 .onTapGesture {
                     isSearching = true
                 }
-                
+            
+            
         }
         .frame(width: UIScreen.main.bounds.width - 20, height: 50)
         .background(neumorphism.color)

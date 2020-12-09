@@ -6,5 +6,9 @@ target 'WakaTime Tracker' do
 
   # Pods for WakaTime Tracker
 pod 'lottie-ios'
-
+pod 'FirebaseFirestoreSwift'
+pod 'Firebase/Storage'
+pod 'Firebase/Firestore'
+pod 'Firebase/Database'
+pod 'Firebase/Auth'
 end
