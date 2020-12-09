@@ -17,7 +17,7 @@ struct CellRowView: View {
     
     @State var result: Result<MFMailComposeResult, Error>? = nil
     @State var isShowingMailView = false
-
+    
     var userHasNoEmail: Bool {
         return user.user.email?.isEmpty ?? true
     }
