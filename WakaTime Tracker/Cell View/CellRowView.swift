@@ -8,12 +8,20 @@
 import SwiftUI
 import SDWebImageSwiftUI
 import NeumorphismUI
-import SafariServices
+import MessageUI
 
 
 struct CellRowView: View {
     let user: UserStats
     @EnvironmentObject var neumorphism: NeumorphismManager
+    
+    @State var result: Result<MFMailComposeResult, Error>? = nil
+    @State var isShowingMailView = false
+
+    var userHasNoEmail: Bool {
+        return user.user.email?.isEmpty ?? true
+    }
+    
     var body: some View {
         
         VStack {
@@ -30,6 +38,22 @@ struct CellRowView: View {
             
             TopLanguagesView(user: user)
                 .padding(.top, 16)
+        }
+        
+        .contextMenu(ContextMenu(menuItems: {
+            Button(action: {
+                self.isShowingMailView.toggle()
+            }, label: {
+                HStack{
+                    Text(userHasNoEmail ? "\(user.user.display_name) does not have email" : "Email \(user.user.display_name)" )
+                    Image(systemName: "envelope")
+                }.font(.system(size: 24))
+            })
+        }))
+        .disabled(userHasNoEmail)
+        .sheet(isPresented: $isShowingMailView) {
+            MailView(result: $result, emailAdress: .constant(user.user.email ?? ""),
+                     fullName: .constant(user.user.display_name))
         }
     }
 }

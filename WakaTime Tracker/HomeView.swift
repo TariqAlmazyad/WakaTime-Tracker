@@ -20,6 +20,8 @@ struct HomeView: View {
     @State private var searchedUser: String = ""
     @State private var isSearching: Bool = false
     
+    
+    
     let columns: [GridItem] = [GridItem(.flexible()),
                                GridItem(.flexible()),]
     var body: some View {
@@ -47,6 +49,7 @@ struct HomeView: View {
                                         self.hideKeyboard()
                                         self.isBarPresented = true
                                     }
+                                    
                             }
                         }
                        
@@ -95,6 +98,7 @@ struct HomeView: View {
         }
     }
 }
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()

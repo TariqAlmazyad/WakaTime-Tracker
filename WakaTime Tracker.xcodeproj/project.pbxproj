@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		830B1940258093A300CA6112 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 830B193F258093A300CA6112 /* GoogleService-Info.plist */; };
+		830B196C25810CF100CA6112 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B196B25810CF100CA6112 /* MailView.swift */; };
 		830ED264256D2BA0005DD739 /* ListPagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830ED263256D2BA0005DD739 /* ListPagination.swift */; };
 		830ED266256D2C33005DD739 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830ED265256D2C33005DD739 /* SpinnerView.swift */; };
 		8310EDE725686E24009FD89B /* coding.json in Resources */ = {isa = PBXBuildFile; fileRef = 8310EDE625686E24009FD89B /* coding.json */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		830B193F258093A300CA6112 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		830B196B25810CF100CA6112 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		830ED263256D2BA0005DD739 /* ListPagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPagination.swift; sourceTree = "<group>"; };
 		830ED265256D2C33005DD739 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		8310EDE625686E24009FD89B /* coding.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coding.json; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				83BC5C942568AFEA00900C05 /* StatusBarView.swift */,
+				830B196B25810CF100CA6112 /* MailView.swift */,
 				8340B9CD25654CD000C4FF7F /* ActivityIndicator+Extens.swift */,
 			);
 			path = Utilits;
@@ -349,6 +352,7 @@
 				8340B9CE25654CD000C4FF7F /* ActivityIndicator+Extens.swift in Sources */,
 				8340B9BF2564A99300C4FF7F /* Model.swift in Sources */,
 				8340B9B12564A98600C4FF7F /* HomeView.swift in Sources */,
+				830B196C25810CF100CA6112 /* MailView.swift in Sources */,
 				830ED264256D2BA0005DD739 /* ListPagination.swift in Sources */,
 				8310EDED2568705C009FD89B /* WakaTimeRefView.swift in Sources */,
 				833837BF257F537300349FB9 /* ProfileImageView.swift in Sources */,

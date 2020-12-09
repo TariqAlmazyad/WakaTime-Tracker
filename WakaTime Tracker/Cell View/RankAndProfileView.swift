@@ -30,8 +30,8 @@ struct RankAndProfileView: View {
                 .overlay(
                     Circle().stroke(Color(#colorLiteral(red: 0.1727925241, green: 0.1605206132, blue: 0.1728563607, alpha: 1)), lineWidth: 8)
                 )
+                .clipShape(Circle())
                 .cornerRadius(40)
-                .clipped()
                 .neumorphismShadow()
         }
     }
