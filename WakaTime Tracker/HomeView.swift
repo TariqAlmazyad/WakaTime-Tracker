@@ -157,6 +157,7 @@ struct SearchBarView: View {
                         isSearching = false
                     }, label: {
                         Image(systemName: "xmark.circle.fill")
+                            .padding()
                             .foregroundColor(.white)
                     })
                 }
