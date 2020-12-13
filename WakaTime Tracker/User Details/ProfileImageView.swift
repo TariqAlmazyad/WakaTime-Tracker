@@ -34,9 +34,8 @@ struct ProfileImageView_Previews: PreviewProvider {
                                                          total_seconds: 65,
                                                          languages: [.init(name: "",
                                                                            total_seconds: 32)]),
-                                    user: .init(full_name: "Tariq Almazyad",
-                                                display_name: "Tariq Almazyad",
-                                                photo: "", email: nil)))
+                                    user: .init(display_name: "Tariq Almazyad",
+                                                photo: "", email: nil, location: "")))
             .environmentObject(neumorphism)
             .preferredColorScheme(.dark)
         

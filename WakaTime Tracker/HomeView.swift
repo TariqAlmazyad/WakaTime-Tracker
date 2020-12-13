@@ -61,6 +61,7 @@ struct HomeView: View {
             .padding(.vertical)
             .background(neumorphism.color)
             .ignoresSafeArea()
+            
         }
         
         .statusBarStyle(.lightContent)

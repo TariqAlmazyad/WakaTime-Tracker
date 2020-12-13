@@ -51,12 +51,15 @@ struct Languages: Codable, Hashable {
     let name : String?
     let total_seconds : Double
 }
+
+
 struct User: Codable, Hashable {
-    let id =  UUID().uuidString
-    let full_name: String
+    var id =  UUID().uuidString
+//    let full_name: String 
     let display_name:  String
     let photo:  String
     let email: String?
+    let location: String
 }
 
 
