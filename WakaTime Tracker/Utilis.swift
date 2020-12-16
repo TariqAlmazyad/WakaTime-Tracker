@@ -26,7 +26,6 @@ extension String {
 }
 
 
-
 ///By wrapping views in a RootView, they will become the app's main / primary view. This will enable setting the statusBarStyle.
 struct RootView<Content: View> : View {
     var content: Content

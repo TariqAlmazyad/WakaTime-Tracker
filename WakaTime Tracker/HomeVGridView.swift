@@ -39,7 +39,6 @@ struct HomeVGridView: View {
 }
 
 
-
 struct HomeVGridView_Previews: PreviewProvider {
     static var previews: some View {
         HomeVGridView()
