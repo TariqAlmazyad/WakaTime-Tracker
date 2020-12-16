@@ -13,7 +13,7 @@ struct HomeView: View {
     
     @ObservedObject var viewModel = WakaTimeNetwork()
     @State private var shouldShowFullScreenModel = false
-    @State private var isShowing = true
+//    @State private var isShowing = true
     @State private var isBarPresented = true
     @State private var isPopupOpen = false
     @State private var user: UserStats?
@@ -29,7 +29,7 @@ struct HomeView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 neumorphism.color.edgesIgnoringSafeArea(.all)
 
-                SearchBarView(searchedUser: $searchedUser,
+                SearchBarView1(searchedUser: $searchedUser,
                               isSearching: $isSearching,
                               isBarPresented: $isBarPresented)
                     .offset(y: UIScreen.screenHeight < 800 ? 86 : 110)
@@ -46,7 +46,6 @@ struct HomeView: View {
                                     .onTapGesture {
                                         self.user = user
                                         self.isPopupOpen.toggle()
-                                        self.hideKeyboard()
                                         self.isBarPresented = true
                                     }
                                     
@@ -114,7 +113,7 @@ let neumorphism = NeumorphismManager(
 )
 
 
-struct SearchBarView: View {
+struct SearchBarView1: View {
     @Binding var searchedUser: String
     @Binding var isSearching: Bool
     @Binding var isBarPresented: Bool

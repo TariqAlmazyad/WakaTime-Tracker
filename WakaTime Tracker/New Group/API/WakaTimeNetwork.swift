@@ -21,19 +21,7 @@ class WakaTimeNetwork: ObservableObject {
     @Published var progress: Double = 0.0
     @Published var dataTask: URLSessionTask?
     @Published var observation: NSKeyValueObservation?
-    @Published var items: [Int] = []
-    //3
-    static private var itemsPerPage = 25
-    var start = WakaTimeNetwork.itemsPerPage
-    var stop = -1
-    let maxData = 250
     
-    private func incrementPaginationIndices() {
-        start += WakaTimeNetwork.itemsPerPage
-        stop += WakaTimeNetwork.itemsPerPage
-        
-        stop = min(maxData, stop)
-    }
     
     init() {
         guard let urlString = URL(string: "https://wakatime.com/api/v1/leaders") else {return}

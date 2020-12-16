@@ -32,7 +32,12 @@
 		8381EA2A256743150079D828 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 8381EA29256743150079D828 /* SwiftUICharts */; };
 		8395ACE82566506900162275 /* LNPopupUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8395ACE72566506900162275 /* LNPopupUI */; };
 		8395ACE92566506900162275 /* LNPopupUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 8395ACE72566506900162275 /* LNPopupUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		83BC5C952568AFEA00900C05 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BC5C942568AFEA00900C05 /* StatusBarView.swift */; };
+		83E61710258A966700979A43 /* Utilis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6170F258A966700979A43 /* Utilis.swift */; };
+		83E61713258A973300979A43 /* HomeVGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E61712258A973300979A43 /* HomeVGridView.swift */; };
+		83E61715258A974700979A43 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E61714258A974700979A43 /* NetworkManager.swift */; };
+		83E61717258A9C8D00979A43 /* WakaTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E61716258A9C8D00979A43 /* WakaTimeViewModel.swift */; };
+		83E61719258AA15900979A43 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E61718258AA15900979A43 /* SearchBarView.swift */; };
+		83E6171B258AB10B00979A43 /* UserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6171A258AB10B00979A43 /* UserCellView.swift */; };
 		83FF3DEF25659062008F3EBE /* SwiftUIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 83FF3DEE25659062008F3EBE /* SwiftUIRefresh */; };
 		83FF3DF725659D30008F3EBE /* NeumorphismUI in Frameworks */ = {isa = PBXBuildFile; productRef = 83FF3DF625659D30008F3EBE /* NeumorphismUI */; };
 		A6F7A2C3BE954683669103E0 /* Pods_WakaTime_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847935B803B749FD31EC3C97 /* Pods_WakaTime_Tracker.framework */; };
@@ -76,7 +81,12 @@
 		8340B9BE2564A99300C4FF7F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8340B9CD25654CD000C4FF7F /* ActivityIndicator+Extens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityIndicator+Extens.swift"; sourceTree = "<group>"; };
 		8381EA262566DAFA0079D828 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
-		83BC5C942568AFEA00900C05 /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
+		83E6170F258A966700979A43 /* Utilis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilis.swift; sourceTree = "<group>"; };
+		83E61712258A973300979A43 /* HomeVGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVGridView.swift; sourceTree = "<group>"; };
+		83E61714258A974700979A43 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		83E61716258A9C8D00979A43 /* WakaTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakaTimeViewModel.swift; sourceTree = "<group>"; };
+		83E61718258AA15900979A43 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		83E6171A258AB10B00979A43 /* UserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellView.swift; sourceTree = "<group>"; };
 		847935B803B749FD31EC3C97 /* Pods_WakaTime_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WakaTime_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA18A51F6F629C2688F4B0D /* Pods-WakaTime Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WakaTime Tracker.release.xcconfig"; path = "Target Support Files/Pods-WakaTime Tracker/Pods-WakaTime Tracker.release.xcconfig"; sourceTree = "<group>"; };
 		E410A0B151CEDD7864FCE002 /* Pods-WakaTime Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WakaTime Tracker.debug.xcconfig"; path = "Target Support Files/Pods-WakaTime Tracker/Pods-WakaTime Tracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -149,7 +159,6 @@
 		833D0575256553C700B9265E /* Utilits */ = {
 			isa = PBXGroup;
 			children = (
-				83BC5C942568AFEA00900C05 /* StatusBarView.swift */,
 				830B196B25810CF100CA6112 /* MailView.swift */,
 				8340B9CD25654CD000C4FF7F /* ActivityIndicator+Extens.swift */,
 			);
@@ -178,15 +187,13 @@
 			isa = PBXGroup;
 			children = (
 				8340B9AE2564A98600C4FF7F /* WakaTime_TrackerApp.swift */,
-				8340B9B02564A98600C4FF7F /* HomeView.swift */,
-				833837C2257F55CE00349FB9 /* Cell View */,
-				833837BD257F535200349FB9 /* User Details */,
-				830ED263256D2BA0005DD739 /* ListPagination.swift */,
-				830ED265256D2C33005DD739 /* SpinnerView.swift */,
-				833837C9257F578300349FB9 /* API */,
-				8310EDEC2568705C009FD89B /* WakaTimeRefView.swift */,
-				8310EDE525686E14009FD89B /* JSONAnimation files */,
-				833D0575256553C700B9265E /* Utilits */,
+				83E61712258A973300979A43 /* HomeVGridView.swift */,
+				83E6171A258AB10B00979A43 /* UserCellView.swift */,
+				83E61718258AA15900979A43 /* SearchBarView.swift */,
+				83E61714258A974700979A43 /* NetworkManager.swift */,
+				83E61716258A9C8D00979A43 /* WakaTimeViewModel.swift */,
+				83E6170F258A966700979A43 /* Utilis.swift */,
+				83E61711258A96E900979A43 /* New Group */,
 				8340B9BE2564A99300C4FF7F /* Model.swift */,
 				8340B9B22564A98900C4FF7F /* Assets.xcassets */,
 				8340B9B72564A98900C4FF7F /* Info.plist */,
@@ -202,6 +209,22 @@
 				8340B9B52564A98900C4FF7F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		83E61711258A96E900979A43 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				8340B9B02564A98600C4FF7F /* HomeView.swift */,
+				833837C2257F55CE00349FB9 /* Cell View */,
+				833837BD257F535200349FB9 /* User Details */,
+				830ED263256D2BA0005DD739 /* ListPagination.swift */,
+				830ED265256D2C33005DD739 /* SpinnerView.swift */,
+				833837C9257F578300349FB9 /* API */,
+				8310EDEC2568705C009FD89B /* WakaTimeRefView.swift */,
+				8310EDE525686E14009FD89B /* JSONAnimation files */,
+				833D0575256553C700B9265E /* Utilits */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		DEBDF6C8F08EC7BA8DD7987D /* Frameworks */ = {
@@ -345,9 +368,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83E6171B258AB10B00979A43 /* UserCellView.swift in Sources */,
 				8310EDE925686E45009FD89B /* LottieAnimationView.swift in Sources */,
 				830ED266256D2C33005DD739 /* SpinnerView.swift in Sources */,
 				8381EA272566DAFA0079D828 /* UserDetailsView.swift in Sources */,
+				83E61717258A9C8D00979A43 /* WakaTimeViewModel.swift in Sources */,
 				833837C1257F53CC00349FB9 /* LanguageProgressView.swift in Sources */,
 				8340B9CE25654CD000C4FF7F /* ActivityIndicator+Extens.swift in Sources */,
 				8340B9BF2564A99300C4FF7F /* Model.swift in Sources */,
@@ -355,11 +380,14 @@
 				830B196C25810CF100CA6112 /* MailView.swift in Sources */,
 				830ED264256D2BA0005DD739 /* ListPagination.swift in Sources */,
 				8310EDED2568705C009FD89B /* WakaTimeRefView.swift in Sources */,
+				83E61713258A973300979A43 /* HomeVGridView.swift in Sources */,
 				833837BF257F537300349FB9 /* ProfileImageView.swift in Sources */,
-				83BC5C952568AFEA00900C05 /* StatusBarView.swift in Sources */,
+				83E61715258A974700979A43 /* NetworkManager.swift in Sources */,
 				833837C8257F562E00349FB9 /* TopLanguagesView.swift in Sources */,
+				83E61710258A966700979A43 /* Utilis.swift in Sources */,
 				833837C6257F561100349FB9 /* Pass_7_DaysTimeView.swift in Sources */,
 				8340B9AF2564A98600C4FF7F /* WakaTime_TrackerApp.swift in Sources */,
+				83E61719258AA15900979A43 /* SearchBarView.swift in Sources */,
 				833D05732565538E00B9265E /* WakaTimeNetwork.swift in Sources */,
 				833D0579256553F700B9265E /* CellRowView.swift in Sources */,
 				833837C4257F55E800349FB9 /* RankAndProfileView.swift in Sources */,

@@ -63,16 +63,6 @@ struct User: Codable, Hashable {
 }
 
 
-
-
-//let client_id = "K5ZeXSwIQONSWI5UhHBRTDnj"
-//let secret = "sec_ekyJ1jDxXz5F2IveY4io03pQjpCOaV15PbTZ8uXfh40XGSEHkKcMADpcStJuRCJdDSa35adKNig4imFV"
-//let authorizeUrl = "https://wakatime.com/oauth/authorize"
-//let accessTokenUrl = "https://wakatime.com/oauth/token"
-//let WAKATIME_API_AUTH_KEY = "Basic \((client_id + ":" + secret).data(using: .utf8)?.base64EncodedString() ?? "" )"
-
-
-
 enum LanguageSelection: String, CaseIterable {
     case Bash
     case C
