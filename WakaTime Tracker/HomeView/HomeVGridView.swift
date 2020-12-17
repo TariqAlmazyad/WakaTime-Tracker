@@ -14,13 +14,6 @@ struct HomeVGridView: View {
     @State private var searchText: String = ""
     @State private var isShowingMenu: Bool = false
     
-    private let columns: [GridItem] = [
-        GridItem(.adaptive(minimum: UIScreen.screenWidth / 4, maximum: 250),
-                 spacing: UIScreen.screenWidth > 600 ? 60 : 10),
-        GridItem(.adaptive(minimum: UIScreen.screenWidth / 4, maximum: 250),
-                 spacing: UIScreen.screenWidth > 600 ? 60 : 10),  
-    ]
-    
     var body: some View {
         ZStack{
             // background color
@@ -33,35 +26,43 @@ struct HomeVGridView: View {
             if viewModel.isLoadingUsers {
                 LoadingIndicatorView()
             } else {
-                ScrollView(.vertical, showsIndicators: false){
-                    // add navBar with config bytton
-                    NavBarView(viewModel: .constant(viewModel), isShowingMenu: $isShowingMenu )
-                        .padding(.top, 54)
-                    // search bar
-                    SearchBarView(text: $searchText)
-                    // filter bar
-                    FilterLanguagesView(selectedLanguage: $viewModel.filteredLanguage)
-                        .padding(.vertical)
-                    // vertical grid
-                    LazyVGrid(columns: columns, spacing: 54) {
-                        ForEach(viewModel.languageFilter(forFilter: viewModel.filteredLanguage)
-                                    .filter{$0.user.display_name.lowercased()
-                                        .contains(searchText.lowercased()) || searchText.isEmpty}, id:\.self){ user in
-                            UserCellView(user: user)
-                                .onTapGesture {
-                                    withAnimation{
-                                        viewModel.selectedUser = user
-                                        viewModel.isShowingUserDetail.toggle()
+                GeometryReader { proxy in
+                    ScrollView(.vertical, showsIndicators: false){
+                        // add navBar with config bytton
+                        NavBarView(viewModel: .constant(viewModel), isShowingMenu: $isShowingMenu )
+                            .padding(.top, 54)
+                        // search bar
+                        SearchBarView(text: $searchText)
+                        // filter bar
+                        FilterLanguagesView(selectedLanguage: $viewModel.filteredLanguage)
+                            .padding(.vertical)
+                        // vertical grid
+                        LazyVGrid(columns:  [
+                            GridItem(.adaptive(minimum: proxy.size.width / 4, maximum: 250),
+                                     spacing: proxy.size.width > 800 ? 100 : 10),
+                            GridItem(.adaptive(minimum: proxy.size.width / 4, maximum: 250),
+                                     spacing: proxy.size.width > 800 ? 100 : 10) ],
+                        spacing: 54) {
+                            
+                            ForEach(viewModel.languageFilter(forFilter: viewModel.filteredLanguage)
+                                        .filter{$0.user.display_name.lowercased()
+                                            .contains(searchText.lowercased()) || searchText.isEmpty}, id:\.self){ user in
+                                UserCellView(user: user)
+                                    .onTapGesture {
+                                        withAnimation{
+                                            viewModel.selectedUser = user
+                                            viewModel.isShowingUserDetail.toggle()
+                                        }
                                     }
-                                }
-                        }
-                    }.padding(.top, 44)
-                    
-                }.cornerRadius(isShowingMenu ? 20 : 10)
-                .scaleEffect(isShowingMenu ? 0.8 : 1)
-                .offset(x: isShowingMenu ? 300 : 0, y: isShowingMenu ? 44 : 0)
-                .blur(radius: isShowingMenu ? 4 : 0)
-                .disabled(isShowingMenu)
+                            }
+                        }.padding(.top, 44)
+                        
+                    }.cornerRadius(isShowingMenu ? 20 : 10)
+                    .scaleEffect(isShowingMenu ? 0.8 : 1)
+                    .offset(x: isShowingMenu ? 300 : 0, y: isShowingMenu ? 44 : 0)
+                    .blur(radius: isShowingMenu ? 4 : 0)
+                    .disabled(isShowingMenu)
+                }
                 
             }
             
@@ -72,7 +73,9 @@ struct HomeVGridView: View {
             }
             
             
-        }.onAppear{ viewModel.getUsers() }
+        }.onAppear{ viewModel.getUsers()
+            Print(UIScreen.screenWidth)
+        }
         
         .alert(item: $viewModel.alertItem) { alertItem in
             Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
@@ -92,11 +95,6 @@ struct HomeVGridView_Previews: PreviewProvider {
             .environmentObject(neumorphism)
     }
 }
-let neumorphism = NeumorphismManager(
-    isDark: true,
-    lightColor: Color(hex: "C1D2EB"),
-    darkColor: Color(hex: "2C292C")
-)
 
 struct NavBarView: View {
     @Binding var viewModel : WakaTimeViewModel

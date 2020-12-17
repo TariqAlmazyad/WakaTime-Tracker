@@ -9,6 +9,7 @@ import SwiftUI
 
 
 import Firebase
+import NeumorphismUI
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
@@ -34,3 +35,9 @@ struct WakaTime_TrackerApp: App {
         }
     }
 }
+
+let neumorphism = NeumorphismManager(
+    isDark: true,
+    lightColor: Color(hex: "C1D2EB"),
+    darkColor: Color(hex: "2C292C")
+)

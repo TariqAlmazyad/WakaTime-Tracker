@@ -13,21 +13,15 @@ struct UserDetailView: View {
     let user: UserStats
     @Binding var isShowingUserDetail: Bool
     
-    private let columns: [GridItem] = [
-        GridItem(.adaptive(minimum: UIScreen.screenWidth / 4, maximum: 250),
-                 spacing: UIScreen.screenWidth > 600 ? 60 : 10),
-        GridItem(.adaptive(minimum: UIScreen.screenWidth / 4, maximum: 250),
-                 spacing: UIScreen.screenWidth > 600 ? 60 : 10),
-    ]
-    
     var body: some View {
         ZStack {
+            GeometryReader { proxy in
             neumorphism.color.ignoresSafeArea()
             ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false) {
                 // nav view with username and xmark
                 ButtonDismissView(isShowingUserDetail: $isShowingUserDetail)
-                    .padding([.top, .horizontal], 34)
-                    .padding(.top, 34)
+                    .padding([.top, .horizontal], 24)
+                    .padding(.top, 44)
                 
                 // profile image
                 UserImageView(user: user)
@@ -52,14 +46,19 @@ struct UserDetailView: View {
                         .font(.system(size: 16, weight: .bold, design: .default))
                         .foregroundColor(Color(.lightGray))
                 }.padding(.top)
-                
-                LazyVGrid(columns: columns, spacing: 80){
-                    ForEach(user.running_total.languages, id:\.self) { language in
-                        LanguageProgressView(user: user, language: language)
-                            .foregroundColor(.white)
-                    }
-                }.padding(.vertical, 24)
-                .padding(.top, 24)
+                 
+                    LazyVGrid(columns: [
+                                GridItem(.adaptive(minimum: proxy.size.width / 4, maximum: 250),
+                                         spacing: proxy.size.width > 800 ? 100 : 10),
+                                GridItem(.adaptive(minimum: proxy.size.width / 4, maximum: 250),
+                                         spacing: proxy.size.width > 800 ? 100 : 10) ], spacing: 80){
+                        ForEach(user.running_total.languages, id:\.self) { language in
+                            LanguageProgressView(user: user, language: language)
+                                .foregroundColor(.white)
+                        }
+                    }.padding(.vertical, 24)
+                    .padding(.top, 24)
+                }
                 
             }
         }
@@ -87,16 +86,24 @@ struct ButtonDismissView: View {
     var body: some View {
         HStack{
             Spacer()
-            Button(action: {
-                withAnimation{
-                    isShowingUserDetail.toggle()
+            NeumorphismButton(
+                shapeType: .roundedRectangle(cornerRadius: 100),
+                normalImage: Image(systemName: "xmark.circle"),
+                selectedImage: Image(systemName: "xmark.circle"),
+                width: 40,
+                height: 40,
+                imageWidth: 30,
+                imageHeight: 30,
+                handler: {
+                    withAnimation{
+                        isShowingUserDetail.toggle()
+                    }
                 }
-            }, label: {
-                Image(systemName: "xmark.circle")
-                    .font(.system(size: 24))
-                    .foregroundColor(Color(#colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)))
-                    .padding(.trailing)
-            })
+            )
+            .font(.system(size: 24))
+            .foregroundColor(Color(#colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)))
         }
     }
 }
+
+
