@@ -29,8 +29,8 @@ final class WakaTimeViewModel: ObservableObject {
         case .Kotlin: return users.filter{$0.running_total.languages.contains(where: {$0.name == "Kotlin"})}
         case .TypeScript: return users.filter{$0.running_total.languages.contains(where: {$0.name == "TypeScript"})}
         case .Bash: return users.filter{$0.running_total.languages.contains(where: {$0.name == "Bash"})}
-        case .C: return users.filter{$0.running_total.languages.contains(where: {$0.name == "C"})}
-        case .Cocoa: return users.filter{$0.running_total.languages.contains(where: {$0.name == "Cocoa"})}
+        case .C: return users.filter{$0.running_total.languages.contains(where: {$0.name == "C++"})}
+        case .Cocoa: return users.filter{$0.running_total.languages.contains(where: {$0.name == "C#"})}
         case .CSS: return users.filter{$0.running_total.languages.contains(where: {$0.name == "CSS"})}
         case .PHP: return users.filter{$0.running_total.languages.contains(where: {$0.name == "PHP"})}
         case .Dart: return users.filter{$0.running_total.languages.contains(where: {$0.name == "Dart"})}

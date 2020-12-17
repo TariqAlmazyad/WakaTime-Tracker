@@ -22,12 +22,18 @@ struct HomeVGridView: View {
     
     var body: some View {
         ZStack{
+            // background color
             neumorphism.color.ignoresSafeArea()
+            // scrollView
             ScrollView(.vertical, showsIndicators: false){
+                // add navBar with config bytton
                 NavBarView()
+                // search bar
                 SearchBarView(text: $searchText)
+                // filter bar
                 FilterLanguagesView(selectedLanguage: $viewModel.filteredLanguage)
                     .padding(.vertical)
+                // vertical grid
                 LazyVGrid(columns: columns, spacing: 54) {
                     ForEach(viewModel.languageFilter(forFilter: viewModel.filteredLanguage)
                                 .filter{$0.user.display_name.lowercased()

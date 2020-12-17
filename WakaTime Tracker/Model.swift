@@ -94,7 +94,7 @@ enum LanguageSelection: String, CaseIterable {
         switch self {
         case .All: return "All"
         case .Bash: return "Bash"
-        case .C: return "Bash"
+        case .C: return "C++"
         case .Cocoa: return "C#"
         case .CSS: return "Cocoa"
         case .PHP: return "CSS"

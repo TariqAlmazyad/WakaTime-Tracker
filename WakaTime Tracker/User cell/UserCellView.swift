@@ -8,12 +8,19 @@
 import SwiftUI
 import NeumorphismUI
 import SDWebImageSwiftUI
+import MessageUI
 
 struct UserCellView: View {
     let user: UserStats
+    @State var result: Result<MFMailComposeResult, Error>? = nil
+    @State var isShowingMailView = false
     
     var isAppAuthor: Bool {
         user.user.display_name == "Tariq Almazyad"
+    }
+    
+    var userHasNoEmail: Bool {
+        return user.user.email?.isEmpty ?? true
     }
     
     var body: some View {
@@ -36,6 +43,7 @@ struct UserCellView: View {
                 .multilineTextAlignment(.center)
                 // total 7 days capsule
             Total_7_DaysView(user: user)
+            
             Text("Average Daily Time")
                 .font(.system(size: 14))
                 .foregroundColor(Color.white.opacity(0.5))
@@ -56,6 +64,20 @@ struct UserCellView: View {
             }
             
             TopUsedLanguagesView(user: user)
+        }.contextMenu(ContextMenu(menuItems: {
+            Button(action: {
+                self.isShowingMailView.toggle()
+            }, label: {
+                HStack{
+                    Text(userHasNoEmail ? "\(user.user.display_name) does not have email" : "Email \(user.user.display_name)" )
+                    Image(systemName: "envelope")
+                }.font(.system(size: 24))
+            })
+        }))
+        .disabled(userHasNoEmail)
+        .sheet(isPresented: $isShowingMailView) {
+            MailView(result: $result, emailAdress: .constant(user.user.email ?? ""),
+                     fullName: .constant(user.user.display_name))
         }
     }
     
