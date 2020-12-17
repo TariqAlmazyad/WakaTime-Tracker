@@ -45,6 +45,7 @@ struct SideMenuView_Previews: PreviewProvider {
 }
 // 1- nav view
 struct NavView: View {
+    @Environment(\.openURL) var openURL
     @Binding var isShowingMenuView: Bool
     var body: some View {
         HStack {
@@ -52,10 +53,18 @@ struct NavView: View {
                 LottieAnimationView(fileName: "coding")
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 200, height: 100)
-                Text("Designed and developed by\nTariq Almazyad")
-                    .font(.subheadline)
-                    .foregroundColor(Color(#colorLiteral(red: 0.5490196078, green: 0.5490196078, blue: 0.5490196078, alpha: 1)))
-                    .multilineTextAlignment(.center)
+                Button(action: {
+                    withAnimation{
+                        openURL(URL(string: "https://www.linkedin.com/in/tariq-almazyad-5a628a138/")!)
+                        isShowingMenuView.toggle()
+                    }
+                    
+                }, label: {
+                    Text("App is\nDesigned and developed by\n@Tariq Almazyad")
+                        .font(.subheadline)
+                        .foregroundColor(Color(#colorLiteral(red: 0.5490196078, green: 0.5490196078, blue: 0.5490196078, alpha: 1)))
+                        .multilineTextAlignment(.center)
+                })
             }.padding(.horizontal, 4)
             Spacer()
             
@@ -91,8 +100,7 @@ struct SideMenuCell: View {
                     switch optionViewModel {
                     case .wakaTimeWebsite:
                         openURL(URL(string: "https://wakatime.com/")!)
-                    case .appVersion:
-                        Print("appVersion")
+                    case .appVersion: return
                     case .reportBug:
                         isShowingMailView.toggle()
                     }
