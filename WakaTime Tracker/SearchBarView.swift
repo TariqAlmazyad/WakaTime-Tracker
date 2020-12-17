@@ -33,7 +33,7 @@ struct SearchBarView: View {
                         alignment: .leading
                     )
             }.padding(.horizontal, 10)
-        }.frame(width: UIScreen.screenWidth - 40, height: 50)
+        }.frame(width: UIScreen.screenWidth / 2 + 100, height: 50)
     }
 }
 

@@ -64,6 +64,13 @@ struct User: Codable, Hashable {
 
 
 enum LanguageSelection: String, CaseIterable {
+    case All
+    case Swift
+    case Python
+    case Java
+    case JavaScript
+    case Kotlin
+    case TypeScript
     case Bash
     case C
     case Cocoa
@@ -75,22 +82,17 @@ enum LanguageSelection: String, CaseIterable {
     case Svelte
     case Lua
     case GraphQL
-    case Python
     case Groovy
-    case Swift
     case YAML
     case Vue
     case HTML
     case JSON
     case XML
-    case TypeScript
-    case Kotlin
     case INI
-    case Java
-    case JavaScript
     
     var languageName: String {
         switch self {
+        case .All: return "All"
         case .Bash: return "Bash"
         case .C: return "Bash"
         case .Cocoa: return "C#"

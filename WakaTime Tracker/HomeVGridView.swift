@@ -10,29 +10,39 @@ import NeumorphismUI
 import SDWebImageSwiftUI
 
 struct HomeVGridView: View {
-    @StateObject private var viewModel = WakaTimeViewModel()
+    @ObservedObject private var viewModel = WakaTimeViewModel()
     @State private var searchText: String = ""
-    let data = Array(1...20).map{ "item \($0)"}
-    let columns: [GridItem] = [
-        GridItem(.adaptive(minimum: UIScreen.screenWidth, maximum: 250)),
-        GridItem(.adaptive(minimum: UIScreen.screenWidth, maximum: 250)),
-        ]
+    
+    private let columns: [GridItem] = [
+        GridItem(.adaptive(minimum: UIScreen.screenWidth / 4, maximum: 250),
+                 spacing: UIScreen.screenWidth > 600 ? 60 : 10),
+        GridItem(.adaptive(minimum: UIScreen.screenWidth / 4, maximum: 250),
+                 spacing: UIScreen.screenWidth > 600 ? 60 : 10),
+    ]
+    
     var body: some View {
         ZStack{
             neumorphism.color.ignoresSafeArea()
             ScrollView(.vertical, showsIndicators: false){
                 NavBarView()
                 SearchBarView(text: $searchText)
-                LazyVGrid(columns: columns, spacing: 260) {
-                    ForEach(viewModel.users, id:\.self){ user in
+                FilterLanguagesView(selectedLanguage: $viewModel.filteredLanguage)
+                    .padding(.vertical)
+                LazyVGrid(columns: columns, spacing: 54) {
+                    ForEach(viewModel.languageFilter(forFilter: viewModel.filteredLanguage)
+                                .filter{$0.user.display_name.lowercased()
+                                    .contains(searchText.lowercased()) || searchText.isEmpty}, id:\.self){ user in
+                        
                         UserCellView(user: user)
                     }
                 }.padding(.top, 44)
             }
-                .onAppear{
-                    viewModel.getUsers()
-                }
-        }.statusBarStyle(.lightContent)
+            
+        }.onAppear{
+            viewModel.getUsers()
+        }
+        
+        .statusBarStyle(.lightContent)
         .hideKeyboardWhenScroll(interactionType: .onDrag)
         .hideKeyboardWhenTouchOutsideTextField()
     }

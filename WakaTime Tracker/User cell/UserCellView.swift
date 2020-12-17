@@ -12,8 +12,12 @@ import SDWebImageSwiftUI
 struct UserCellView: View {
     let user: UserStats
     
+    var isAppAuthor: Bool {
+        user.user.display_name == "Tariq Almazyad"
+    }
+    
     var body: some View {
-        VStack {
+        VStack{
             // rank
             HStack{
                 Text("Rank #\(user.rank)")
@@ -25,8 +29,11 @@ struct UserCellView: View {
             // username
             Text(user.user.display_name)
                 .foregroundColor(Color(#colorLiteral(red: 0.6475275159, green: 0.6230242848, blue: 0.647654593, alpha: 1)))
-                .frame(width: UIScreen.screenWidth / 2.4)
                 .padding(.top)
+            Text(isAppAuthor ? "WakaTime\nApp developer" : "")
+                .foregroundColor(.white)
+                .padding(.top, 4)
+                .multilineTextAlignment(.center)
                 // total 7 days capsule
             Total_7_DaysView(user: user)
             Text("Average Daily Time")
@@ -42,18 +49,20 @@ struct UserCellView: View {
                 Capsule(style: .circular)
                     .fill(neumorphism.color)
                     .neumorphismConcave(shapeType: .capsule, color: nil)
-                    .frame(width: UIScreen.screenWidth / 2.6, height: 44)
+                    .frame(width: 180, height: 44)
                 Text("Top used languages")
                     .font(.system(size: 14))
                     .foregroundColor(Color.white.opacity(0.5))
             }
             
             TopUsedLanguagesView(user: user)
-            
         }
     }
     
-  
+    fileprivate func widthForTab(_ text: String) -> CGFloat {
+        return text.widthOfString(usingFont: .systemFont(ofSize: 16, weight: .bold))
+    }
+    
 }
 struct UserCellView_Previews: PreviewProvider {
     static var previews: some View {

@@ -22,8 +22,8 @@ extension String {
         let size = self.size(withAttributes: fontAttributes)
         return size.width
     }
-    
 }
+
 
 
 ///By wrapping views in a RootView, they will become the app's main / primary view. This will enable setting the statusBarStyle.

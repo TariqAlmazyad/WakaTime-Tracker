@@ -15,7 +15,7 @@ struct Total_7_DaysView: View {
             Capsule(style: .circular)
                 .fill(neumorphism.color)
                 .neumorphismConcave(shapeType: .capsule, color: nil)
-                .frame(width: UIScreen.screenWidth / 2.3, height: 64)
+                .frame(width: 180, height: 64)
             VStack {
                 Text("Total pass 7 days:")
                     .font(.system(size: 14))

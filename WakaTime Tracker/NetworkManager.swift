@@ -56,7 +56,7 @@ final class NetworkManager {
         URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
             guard let self = self else {return}
             DispatchQueue.main.async { [weak self] in
-                guard let self = self else {return}
+                
                 // 3 check for response
                 if let response = (response as? HTTPURLResponse)?.statusCode, response >= 400 {
                     completion(.failure(.invalidResponse))
@@ -71,6 +71,7 @@ final class NetworkManager {
                 do {
                     let decodedData = try JSONDecoder().decode(WakaTimeData.self, from: data)
                     completion(.success(decodedData))
+                    
                 } catch (let error){
                     completion(.failure(.invalidJSON))
                     print("Failed to decode JSON due to unMatched struct \(error.localizedDescription)")

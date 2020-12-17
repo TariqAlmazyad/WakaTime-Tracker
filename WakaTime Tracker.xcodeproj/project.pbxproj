@@ -28,6 +28,7 @@
 		8340B9BF2564A99300C4FF7F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B9BE2564A99300C4FF7F /* Model.swift */; };
 		8340B9CB25654B7500C4FF7F /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8340B9CA25654B7500C4FF7F /* SDWebImageSwiftUI */; };
 		8340B9CE25654CD000C4FF7F /* ActivityIndicator+Extens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B9CD25654CD000C4FF7F /* ActivityIndicator+Extens.swift */; };
+		834F6863258B7876006DBE38 /* FilterLanguagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834F6862258B7876006DBE38 /* FilterLanguagesView.swift */; };
 		8381EA272566DAFA0079D828 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381EA262566DAFA0079D828 /* UserDetailsView.swift */; };
 		8381EA2A256743150079D828 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 8381EA29256743150079D828 /* SwiftUICharts */; };
 		8395ACE82566506900162275 /* LNPopupUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8395ACE72566506900162275 /* LNPopupUI */; };
@@ -83,6 +84,7 @@
 		8340B9B72564A98900C4FF7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8340B9BE2564A99300C4FF7F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8340B9CD25654CD000C4FF7F /* ActivityIndicator+Extens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityIndicator+Extens.swift"; sourceTree = "<group>"; };
+		834F6862258B7876006DBE38 /* FilterLanguagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterLanguagesView.swift; sourceTree = "<group>"; };
 		8381EA262566DAFA0079D828 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		83E6170F258A966700979A43 /* Utilis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilis.swift; sourceTree = "<group>"; };
 		83E61712258A973300979A43 /* HomeVGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVGridView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		83E6171D258AB94900979A43 /* UserImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageView.swift; sourceTree = "<group>"; };
 		83E6171F258AB97200979A43 /* TopUsedLanguagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUsedLanguagesView.swift; sourceTree = "<group>"; };
 		83E61721258AB9BB00979A43 /* Total_7_DaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Total_7_DaysView.swift; sourceTree = "<group>"; };
+		83E61723258B64F200979A43 /* WakaTime Tracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WakaTime Tracker.entitlements"; sourceTree = "<group>"; };
 		847935B803B749FD31EC3C97 /* Pods_WakaTime_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WakaTime_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA18A51F6F629C2688F4B0D /* Pods-WakaTime Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WakaTime Tracker.release.xcconfig"; path = "Target Support Files/Pods-WakaTime Tracker/Pods-WakaTime Tracker.release.xcconfig"; sourceTree = "<group>"; };
 		E410A0B151CEDD7864FCE002 /* Pods-WakaTime Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WakaTime Tracker.debug.xcconfig"; path = "Target Support Files/Pods-WakaTime Tracker/Pods-WakaTime Tracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -192,12 +195,14 @@
 		8340B9AD2564A98600C4FF7F /* WakaTime Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				83E61723258B64F200979A43 /* WakaTime Tracker.entitlements */,
 				8340B9AE2564A98600C4FF7F /* WakaTime_TrackerApp.swift */,
 				83E61712258A973300979A43 /* HomeVGridView.swift */,
-				83E6171C258AB93800979A43 /* User cell */,
+				834F6862258B7876006DBE38 /* FilterLanguagesView.swift */,
 				83E61718258AA15900979A43 /* SearchBarView.swift */,
-				83E61714258A974700979A43 /* NetworkManager.swift */,
+				83E6171C258AB93800979A43 /* User cell */,
 				83E61716258A9C8D00979A43 /* WakaTimeViewModel.swift */,
+				83E61714258A974700979A43 /* NetworkManager.swift */,
 				83E6170F258A966700979A43 /* Utilis.swift */,
 				83E61711258A96E900979A43 /* New Group */,
 				8340B9BE2564A99300C4FF7F /* Model.swift */,
@@ -385,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				834F6863258B7876006DBE38 /* FilterLanguagesView.swift in Sources */,
 				83E61720258AB97200979A43 /* TopUsedLanguagesView.swift in Sources */,
 				83E6171B258AB10B00979A43 /* UserCellView.swift in Sources */,
 				8310EDE925686E45009FD89B /* LottieAnimationView.swift in Sources */,
@@ -539,6 +545,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "WakaTime Tracker/WakaTime Tracker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.8;
 				DEVELOPMENT_ASSET_PATHS = "\"WakaTime Tracker/Preview Content\"";
@@ -553,8 +560,9 @@
 				MARKETING_VERSION = 0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ARMobileApps.org.WakaTimeTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -564,6 +572,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "WakaTime Tracker/WakaTime Tracker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.8;
 				DEVELOPMENT_ASSET_PATHS = "\"WakaTime Tracker/Preview Content\"";
@@ -578,8 +587,9 @@
 				MARKETING_VERSION = 0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ARMobileApps.org.WakaTimeTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

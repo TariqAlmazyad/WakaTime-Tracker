@@ -42,6 +42,8 @@ struct TopLanguagesView: View {
     func didPressLanguage(languageName: String){
         let selection =  LanguageSelection(rawValue: languageName)
         switch selection {
+        case .All:
+            Print("")
         case .Bash:
             openURL(URL(string: "https://www.gnu.org/software/bash/")!)
         case .C:
