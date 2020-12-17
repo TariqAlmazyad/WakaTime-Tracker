@@ -11,6 +11,7 @@ import SDWebImageSwiftUI
 struct UserDetailView: View {
     
     let user: UserStats
+    @Binding var isShowingUserDetail: Bool
     
     var body: some View {
         ZStack {
@@ -32,7 +33,7 @@ struct UserDetailView: View {
 
 struct UserDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        UserDetailView(user: user)
+        UserDetailView(user: user, isShowingUserDetail: .constant(true))
     }
 }
 

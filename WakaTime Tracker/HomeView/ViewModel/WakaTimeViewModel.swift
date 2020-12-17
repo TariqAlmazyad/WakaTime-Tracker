@@ -34,7 +34,9 @@ final class WakaTimeViewModel: ObservableObject {
                     self.wakatimeData = wakatimeData
                     self.users = wakatimeData.data
                     print(self.wakatimeData?.data)
-                    
+                    for language in self.users {
+                        print(language.running_total.languages)
+                    }
                 // if failure? display the proper prompt.
                 case .failure( let error):
                     switch error {
@@ -63,6 +65,7 @@ final class WakaTimeViewModel: ObservableObject {
         case .Swift: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
         case .Python: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
         case .Java: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .Rust: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
         case .JavaScript: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
         case .Kotlin: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
         case .TypeScript: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}

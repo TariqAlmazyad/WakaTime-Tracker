@@ -202,7 +202,6 @@
 				83E61723258B64F200979A43 /* WakaTime Tracker.entitlements */,
 				8340B9AE2564A98600C4FF7F /* WakaTime_TrackerApp.swift */,
 				83BD1348258BC01700CB72A5 /* HomeView */,
-				8310EDE525686E14009FD89B /* JSONAnimation files */,
 				83E61711258A96E900979A43 /* New Group */,
 				8340B9B22564A98900C4FF7F /* Assets.xcassets */,
 				8340B9B72564A98900C4FF7F /* Info.plist */,
@@ -265,6 +264,7 @@
 				83BD1346258BBF5A00CB72A5 /* ViewModel */,
 				83BD1345258BBF4C00CB72A5 /* Network */,
 				8340B9BE2564A99300C4FF7F /* Model.swift */,
+				8310EDE525686E14009FD89B /* JSONAnimation files */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";

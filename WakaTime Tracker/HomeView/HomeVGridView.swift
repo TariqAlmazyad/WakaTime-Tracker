@@ -61,7 +61,8 @@ struct HomeVGridView: View {
             
             
             if let selectedUser = viewModel.selectedUser {
-                UserDetailView(user: selectedUser)
+                UserDetailView(user: selectedUser,
+                               isShowingUserDetail: $viewModel.isShowingUserDetail )
                     .opacity(viewModel.isShowingUserDetail ? 1 : 0)
             }
             

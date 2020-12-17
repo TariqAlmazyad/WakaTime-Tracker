@@ -50,6 +50,8 @@ struct TopUsedLanguagesView: View {
             openURL(URL(string: "https://www.w3schools.com/sql/sql_intro.asp")!)
         case .Svelte:
             openURL(URL(string: "https://svelte.dev/")!)
+        case .Rust:
+            openURL(URL(string: "https://www.rust-lang.org/")!)
         case .Lua:
             openURL(URL(string: "https://www.lua.org/")!)
         case .GraphQL:

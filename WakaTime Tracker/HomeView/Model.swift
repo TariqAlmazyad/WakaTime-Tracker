@@ -77,6 +77,7 @@ enum LanguageSelection: String, CaseIterable {
     case CSS
     case PHP
     case Dart
+    case Rust
     case Ruby
     case SQL
     case Svelte
@@ -98,6 +99,7 @@ enum LanguageSelection: String, CaseIterable {
         case .Cocoa: return "C#"
         case .CSS: return "Cocoa"
         case .PHP: return "CSS"
+        case .Rust: return "Rust"
         case .Dart: return "PHP"
         case .Ruby: return "Dart"
         case .SQL: return "SQL"

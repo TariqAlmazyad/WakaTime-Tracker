@@ -24,25 +24,28 @@ struct SearchBarView: View {
                     .padding(.horizontal, 24)
                     .cornerRadius(8)
                     .overlay(
-                        HStack {
                             Image(systemName: "magnifyingglass")
                                 .foregroundColor(.gray)
                                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                                 .padding(.leading, 8)
-                        },
+                        ,
                         alignment: .leading
                     )
             }.padding(.horizontal, 10)
-        }.frame(width: UIScreen.screenWidth / 2 + 100, height: 50)
+        }.frame(width: UIScreen.screenWidth / 2 + 140, height: 50)
     }
 }
 
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
-        ZStack {
-            SearchBarView(text: .constant(""))
-                .preferredColorScheme(.dark)
-                .environmentObject(neumorphism)
-        }
+        
+        SearchBarView(text: .constant(""))
+            .environmentObject(neumorphism)
+            .previewLayout(.sizeThatFits)
+            .preferredColorScheme(.dark)
+            .padding()
+        HomeVGridView()
+            .environmentObject(neumorphism)
+        
     }
 }
