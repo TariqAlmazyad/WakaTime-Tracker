@@ -18,7 +18,7 @@ struct HomeVGridView: View {
         GridItem(.adaptive(minimum: UIScreen.screenWidth / 4, maximum: 250),
                  spacing: UIScreen.screenWidth > 600 ? 60 : 10),
         GridItem(.adaptive(minimum: UIScreen.screenWidth / 4, maximum: 250),
-                 spacing: UIScreen.screenWidth > 600 ? 60 : 10),
+                 spacing: UIScreen.screenWidth > 600 ? 60 : 10),  
     ]
     
     var body: some View {
@@ -73,6 +73,11 @@ struct HomeVGridView: View {
             
             
         }.onAppear{ viewModel.getUsers() }
+        
+        .alert(item: $viewModel.alertItem) { alertItem in
+            Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
+        }
+        
         .ignoresSafeArea()
         .statusBarStyle(.lightContent)
         .hideKeyboardWhenScroll(interactionType: .onDrag)

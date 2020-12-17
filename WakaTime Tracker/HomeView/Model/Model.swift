@@ -10,6 +10,8 @@ import Foundation
 struct WakaTimeData: Codable, Hashable {
     let data: [UserStats]
     let range: Range
+    let total_pages: Int
+    let page: Int
 }
 
 struct CurrentUser: Codable, Hashable {

@@ -68,8 +68,10 @@ final class NetworkManager {
                     return
                 }
                 
+                // 5 decode data and escape with result
                 do {
                     let decodedData = try JSONDecoder().decode(WakaTimeData.self, from: data)
+                    print("Total pages is \(decodedData.page)")
                     completion(.success(decodedData))
                     
                 } catch (let error){
