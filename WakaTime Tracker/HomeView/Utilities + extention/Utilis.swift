@@ -97,7 +97,7 @@ extension View {
     }
     
     /// to modify  the navBar attributes , title , bar color , and Translucent
-    func navBarModifier(largeTitleColor: Color, smallTitleColor: Color, isTranslucent: Bool, barStyle:  UIBarStyle   ) -> some View {
+    func navBarModifier(largeTitleColor: Color, smallTitleColor: Color, isTranslucent: Bool, barStyle:  UIBarStyle) -> some View {
         return self.onAppear{
             UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: largeTitleColor.uiColor()]
             UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: smallTitleColor.uiColor()]

@@ -169,13 +169,13 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		833D0575256553C700B9265E /* Utilits */ = {
+		833D0575256553C700B9265E /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				830B196B25810CF100CA6112 /* MailView.swift */,
 				8340B9CD25654CD000C4FF7F /* ActivityIndicator+Extens.swift */,
 			);
-			path = Utilits;
+			path = Util;
 			sourceTree = "<group>";
 		};
 		8340B9A22564A98600C4FF7F = {
@@ -201,18 +201,9 @@
 			children = (
 				83E61723258B64F200979A43 /* WakaTime Tracker.entitlements */,
 				8340B9AE2564A98600C4FF7F /* WakaTime_TrackerApp.swift */,
-				83E61712258A973300979A43 /* HomeVGridView.swift */,
-				83BD1342258BBA5600CB72A5 /* UserDetailView.swift */,
-				834F6864258B9724006DBE38 /* SideMenuView.swift */,
-				834F6862258B7876006DBE38 /* FilterLanguagesView.swift */,
-				83E61718258AA15900979A43 /* SearchBarView.swift */,
-				83E6171C258AB93800979A43 /* User cell */,
-				83E61716258A9C8D00979A43 /* WakaTimeViewModel.swift */,
-				83E61714258A974700979A43 /* NetworkManager.swift */,
-				83E6170F258A966700979A43 /* Utilis.swift */,
+				83BD1348258BC01700CB72A5 /* HomeView */,
 				8310EDE525686E14009FD89B /* JSONAnimation files */,
 				83E61711258A96E900979A43 /* New Group */,
-				8340B9BE2564A99300C4FF7F /* Model.swift */,
 				8340B9B22564A98900C4FF7F /* Assets.xcassets */,
 				8340B9B72564A98900C4FF7F /* Info.plist */,
 				830B193F258093A300CA6112 /* GoogleService-Info.plist */,
@@ -229,6 +220,55 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		83BD1344258BBF2400CB72A5 /* User Detail View */ = {
+			isa = PBXGroup;
+			children = (
+				83BD1342258BBA5600CB72A5 /* UserDetailView.swift */,
+			);
+			path = "User Detail View";
+			sourceTree = "<group>";
+		};
+		83BD1345258BBF4C00CB72A5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				83E61714258A974700979A43 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		83BD1346258BBF5A00CB72A5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				83E61716258A9C8D00979A43 /* WakaTimeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		83BD1347258BBF8100CB72A5 /* Utilities + extention */ = {
+			isa = PBXGroup;
+			children = (
+				83E6170F258A966700979A43 /* Utilis.swift */,
+			);
+			path = "Utilities + extention";
+			sourceTree = "<group>";
+		};
+		83BD1348258BC01700CB72A5 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				83E61712258A973300979A43 /* HomeVGridView.swift */,
+				83E61718258AA15900979A43 /* SearchBarView.swift */,
+				834F6862258B7876006DBE38 /* FilterLanguagesView.swift */,
+				834F6864258B9724006DBE38 /* SideMenuView.swift */,
+				83E6171C258AB93800979A43 /* User cell */,
+				83BD1344258BBF2400CB72A5 /* User Detail View */,
+				83BD1347258BBF8100CB72A5 /* Utilities + extention */,
+				83BD1346258BBF5A00CB72A5 /* ViewModel */,
+				83BD1345258BBF4C00CB72A5 /* Network */,
+				8340B9BE2564A99300C4FF7F /* Model.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
 		83E61711258A96E900979A43 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,7 +279,7 @@
 				830ED265256D2C33005DD739 /* SpinnerView.swift */,
 				833837C9257F578300349FB9 /* API */,
 				8310EDEC2568705C009FD89B /* WakaTimeRefView.swift */,
-				833D0575256553C700B9265E /* Utilits */,
+				833D0575256553C700B9265E /* Util */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
