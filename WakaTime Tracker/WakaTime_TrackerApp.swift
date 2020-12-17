@@ -21,15 +21,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct WakaTime_TrackerApp: App {
-    
-    init() {
-        UITableViewCell.appearance().backgroundColor = .clear
-        UITableView.appearance().backgroundColor = #colorLiteral(red: 0.1603881121, green: 0.1677560508, blue: 0.2133775949, alpha: 1)
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-        UINavigationBar.appearance().isTranslucent = true
-        UINavigationBar.appearance().barStyle = .black
-    }
 
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
@@ -37,7 +28,7 @@ struct WakaTime_TrackerApp: App {
         WindowGroup {
             RootView {
                 HomeVGridView()
-//                    .preferredColorScheme(.dark)
+                    .preferredColorScheme(.dark)
                     .environmentObject(neumorphism)
             }
         }

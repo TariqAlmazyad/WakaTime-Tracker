@@ -23,10 +23,10 @@ struct UserDetailView: View {
     var body: some View {
         ZStack {
             neumorphism.color.ignoresSafeArea()
-            ScrollView {
+            ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false) {
                 // nav view with username and xmark
                 ButtonDismissView(isShowingUserDetail: $isShowingUserDetail)
-                    .padding(34)
+                    .padding([.top, .horizontal], 34)
                     .padding(.top, 34)
                 
                 // profile image
@@ -57,9 +57,9 @@ struct UserDetailView: View {
                     ForEach(user.running_total.languages, id:\.self) { language in
                         LanguageProgressView(user: user, language: language)
                             .foregroundColor(.white)
-                            .padding(.top, 40)
                     }
-                }
+                }.padding(.vertical, 24)
+                .padding(.top, 24)
                 
             }
         }
