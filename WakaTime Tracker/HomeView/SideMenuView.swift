@@ -52,11 +52,11 @@ struct NavView: View {
                 LottieAnimationView(fileName: "coding")
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 200, height: 100)
-                Text("Designed by\nTariq Almazyad")
+                Text("Designed and developed by\nTariq Almazyad")
                     .font(.subheadline)
                     .foregroundColor(Color(#colorLiteral(red: 0.5490196078, green: 0.5490196078, blue: 0.5490196078, alpha: 1)))
                     .multilineTextAlignment(.center)
-            }
+            }.padding(.horizontal, 4)
             Spacer()
             
             NeumorphismButton(

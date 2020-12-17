@@ -29,8 +29,7 @@ struct UserImageView: View {
                 .frame(width: 60, height: 60)
                 .clipShape(Circle())
         }
-        .padding(.top, 12)
-        .frame(width: 90, height: 90)
+      
     }
 }
 

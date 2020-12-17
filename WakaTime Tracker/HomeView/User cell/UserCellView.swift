@@ -34,6 +34,8 @@ struct UserCellView: View {
             }.padding(.horizontal)
             // profileImage
             UserImageView(user: user)
+                .padding(.top, 12)
+                .frame(width: 90, height: 90)
             // username
             Text(user.user.display_name)
                 .foregroundColor(Color(#colorLiteral(red: 0.6475275159, green: 0.6230242848, blue: 0.647654593, alpha: 1)))
