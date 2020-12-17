@@ -13,19 +13,19 @@ final class WakaTimeViewModel: ObservableObject {
     @Published var users: [UserStats] = []
     @Published var selectedUser: UserStats?
     @Published var alertItem: AlertItem?
-    @Published var isLoading: Bool = false
+    @Published var isLoadingUsers: Bool = false
     @Published var isShowingUserDetail: Bool = false
     @Published var filteredLanguage: LanguageSelection = .All
     
     
     
     func getUsers(){
-        isLoading = true
+        isLoadingUsers = true
         NetworkManager.shared.downloadUsers { [weak self] result in
             guard let self = self else {return}
             
             // update UI on mainThread
-            DispatchQueue.main.async { [weak self] in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
                 guard let self = self else {return}
                 self.objectWillChange.send()
                 // check result
@@ -33,10 +33,6 @@ final class WakaTimeViewModel: ObservableObject {
                 case .success( let wakatimeData ):
                     self.wakatimeData = wakatimeData
                     self.users = wakatimeData.data
-                    print(self.wakatimeData?.data)
-                    for language in self.users {
-                        print(language.running_total.languages)
-                    }
                 // if failure? display the proper prompt.
                 case .failure( let error):
                     switch error {
@@ -54,7 +50,7 @@ final class WakaTimeViewModel: ObservableObject {
                     }
                 }
                 
-                self.isLoading = false
+                self.isLoadingUsers = false
             }
         }
     }

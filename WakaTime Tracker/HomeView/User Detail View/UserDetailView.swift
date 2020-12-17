@@ -25,17 +25,20 @@ struct UserDetailView: View {
             neumorphism.color.ignoresSafeArea()
             ScrollView {
                 // nav view with username and xmark
-                UsernameView(user: user, isShowingUserDetail: $isShowingUserDetail)
+                ButtonDismissView(isShowingUserDetail: $isShowingUserDetail)
+                    .padding(34)
+                    .padding(.top, 34)
+                
                 // profile image
                 UserImageView(user: user)
                     .frame(width: 100, height: 100)
-                
+                // username
                 VStack(spacing: 12){
                     Text("\(user.user.display_name)\nrank#\(user.rank)")
                         .font(.system(size: 20, weight: .bold, design: .default))
                         .foregroundColor(Color(.white))
                         .multilineTextAlignment(.center)
-                    
+                    // email text
                     Text(user.user.email ?? "\(user.user.display_name) does not have an email")
                         .font(.system(size: 14, weight: .semibold, design: .default))
                         .foregroundColor(Color(.lightGray))
@@ -65,7 +68,7 @@ struct UserDetailView: View {
 
 struct UserDetailView_Previews: PreviewProvider {
     static var previews: some View {
-//        UserDetailView(user: user, isShowingUserDetail: .constant(true))
+        //        UserDetailView(user: user, isShowingUserDetail: .constant(true))
         HomeVGridView()
             .environmentObject(neumorphism)
     }
@@ -79,22 +82,21 @@ let user = UserStats(rank: 0,
                                           languages: [.init(name: "", total_seconds: 0.0)]),
                      user: .init(display_name: "Tariq Almazyad", photo: "", email: "", location: ""))
 
-struct UsernameView: View {
-    let user: UserStats
+struct ButtonDismissView: View {
     @Binding var isShowingUserDetail: Bool
     var body: some View {
-            HStack{
-                Spacer()
-                Button(action: {
-                    withAnimation{
-                        isShowingUserDetail.toggle()
-                    }
-                }, label: {
-                    Image(systemName: "xmark.circle")
-                        .font(.system(size: 24))
-                        .foregroundColor(Color(#colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)))
-                        .padding(.trailing)
-                })
-            }.padding()
+        HStack{
+            Spacer()
+            Button(action: {
+                withAnimation{
+                    isShowingUserDetail.toggle()
+                }
+            }, label: {
+                Image(systemName: "xmark.circle")
+                    .font(.system(size: 24))
+                    .foregroundColor(Color(#colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)))
+                    .padding(.trailing)
+            })
+        }
     }
 }

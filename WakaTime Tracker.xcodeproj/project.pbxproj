@@ -9,20 +9,11 @@
 /* Begin PBXBuildFile section */
 		830B1940258093A300CA6112 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 830B193F258093A300CA6112 /* GoogleService-Info.plist */; };
 		830B196C25810CF100CA6112 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B196B25810CF100CA6112 /* MailView.swift */; };
-		830ED264256D2BA0005DD739 /* ListPagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830ED263256D2BA0005DD739 /* ListPagination.swift */; };
 		830ED266256D2C33005DD739 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830ED265256D2C33005DD739 /* SpinnerView.swift */; };
 		8310EDE725686E24009FD89B /* coding.json in Resources */ = {isa = PBXBuildFile; fileRef = 8310EDE625686E24009FD89B /* coding.json */; };
 		8310EDE925686E45009FD89B /* LottieAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310EDE825686E45009FD89B /* LottieAnimationView.swift */; };
-		8310EDED2568705C009FD89B /* WakaTimeRefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310EDEC2568705C009FD89B /* WakaTimeRefView.swift */; };
-		833837BF257F537300349FB9 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833837BE257F537300349FB9 /* ProfileImageView.swift */; };
 		833837C1257F53CC00349FB9 /* LanguageProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833837C0257F53CC00349FB9 /* LanguageProgressView.swift */; };
-		833837C4257F55E800349FB9 /* RankAndProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833837C3257F55E800349FB9 /* RankAndProfileView.swift */; };
-		833837C6257F561100349FB9 /* Pass_7_DaysTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833837C5257F561100349FB9 /* Pass_7_DaysTimeView.swift */; };
-		833837C8257F562E00349FB9 /* TopLanguagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833837C7257F562E00349FB9 /* TopLanguagesView.swift */; };
-		833D05732565538E00B9265E /* WakaTimeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833D05722565538E00B9265E /* WakaTimeNetwork.swift */; };
-		833D0579256553F700B9265E /* CellRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833D0578256553F700B9265E /* CellRowView.swift */; };
 		8340B9AF2564A98600C4FF7F /* WakaTime_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B9AE2564A98600C4FF7F /* WakaTime_TrackerApp.swift */; };
-		8340B9B12564A98600C4FF7F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B9B02564A98600C4FF7F /* HomeView.swift */; };
 		8340B9B32564A98900C4FF7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8340B9B22564A98900C4FF7F /* Assets.xcassets */; };
 		8340B9B62564A98900C4FF7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8340B9B52564A98900C4FF7F /* Preview Assets.xcassets */; };
 		8340B9BF2564A99300C4FF7F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B9BE2564A99300C4FF7F /* Model.swift */; };
@@ -30,7 +21,6 @@
 		8340B9CE25654CD000C4FF7F /* ActivityIndicator+Extens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B9CD25654CD000C4FF7F /* ActivityIndicator+Extens.swift */; };
 		834F6863258B7876006DBE38 /* FilterLanguagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834F6862258B7876006DBE38 /* FilterLanguagesView.swift */; };
 		834F6865258B9724006DBE38 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834F6864258B9724006DBE38 /* SideMenuView.swift */; };
-		8381EA272566DAFA0079D828 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381EA262566DAFA0079D828 /* UserDetailsView.swift */; };
 		8381EA2A256743150079D828 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 8381EA29256743150079D828 /* SwiftUICharts */; };
 		8395ACE82566506900162275 /* LNPopupUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8395ACE72566506900162275 /* LNPopupUI */; };
 		8395ACE92566506900162275 /* LNPopupUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 8395ACE72566506900162275 /* LNPopupUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -66,21 +56,12 @@
 /* Begin PBXFileReference section */
 		830B193F258093A300CA6112 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		830B196B25810CF100CA6112 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
-		830ED263256D2BA0005DD739 /* ListPagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPagination.swift; sourceTree = "<group>"; };
 		830ED265256D2C33005DD739 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		8310EDE625686E24009FD89B /* coding.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coding.json; sourceTree = "<group>"; };
 		8310EDE825686E45009FD89B /* LottieAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieAnimationView.swift; sourceTree = "<group>"; };
-		8310EDEC2568705C009FD89B /* WakaTimeRefView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakaTimeRefView.swift; sourceTree = "<group>"; };
-		833837BE257F537300349FB9 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		833837C0257F53CC00349FB9 /* LanguageProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageProgressView.swift; sourceTree = "<group>"; };
-		833837C3257F55E800349FB9 /* RankAndProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankAndProfileView.swift; sourceTree = "<group>"; };
-		833837C5257F561100349FB9 /* Pass_7_DaysTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pass_7_DaysTimeView.swift; sourceTree = "<group>"; };
-		833837C7257F562E00349FB9 /* TopLanguagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLanguagesView.swift; sourceTree = "<group>"; };
-		833D05722565538E00B9265E /* WakaTimeNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakaTimeNetwork.swift; sourceTree = "<group>"; };
-		833D0578256553F700B9265E /* CellRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellRowView.swift; sourceTree = "<group>"; };
 		8340B9AB2564A98600C4FF7F /* WakaTime Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WakaTime Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8340B9AE2564A98600C4FF7F /* WakaTime_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakaTime_TrackerApp.swift; sourceTree = "<group>"; };
-		8340B9B02564A98600C4FF7F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8340B9B22564A98900C4FF7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8340B9B52564A98900C4FF7F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8340B9B72564A98900C4FF7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,7 +69,6 @@
 		8340B9CD25654CD000C4FF7F /* ActivityIndicator+Extens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityIndicator+Extens.swift"; sourceTree = "<group>"; };
 		834F6862258B7876006DBE38 /* FilterLanguagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterLanguagesView.swift; sourceTree = "<group>"; };
 		834F6864258B9724006DBE38 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
-		8381EA262566DAFA0079D828 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		83BD1342258BBA5600CB72A5 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		83E6170F258A966700979A43 /* Utilis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilis.swift; sourceTree = "<group>"; };
 		83E61712258A973300979A43 /* HomeVGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVGridView.swift; sourceTree = "<group>"; };
@@ -140,43 +120,6 @@
 			path = "JSONAnimation files";
 			sourceTree = "<group>";
 		};
-		833837BD257F535200349FB9 /* User Details */ = {
-			isa = PBXGroup;
-			children = (
-				8381EA262566DAFA0079D828 /* UserDetailsView.swift */,
-				833837BE257F537300349FB9 /* ProfileImageView.swift */,
-			);
-			path = "User Details";
-			sourceTree = "<group>";
-		};
-		833837C2257F55CE00349FB9 /* Cell View */ = {
-			isa = PBXGroup;
-			children = (
-				833D0578256553F700B9265E /* CellRowView.swift */,
-				833837C7257F562E00349FB9 /* TopLanguagesView.swift */,
-				833837C5257F561100349FB9 /* Pass_7_DaysTimeView.swift */,
-				833837C3257F55E800349FB9 /* RankAndProfileView.swift */,
-			);
-			path = "Cell View";
-			sourceTree = "<group>";
-		};
-		833837C9257F578300349FB9 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				833D05722565538E00B9265E /* WakaTimeNetwork.swift */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		833D0575256553C700B9265E /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				830B196B25810CF100CA6112 /* MailView.swift */,
-				8340B9CD25654CD000C4FF7F /* ActivityIndicator+Extens.swift */,
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
 		8340B9A22564A98600C4FF7F = {
 			isa = PBXGroup;
 			children = (
@@ -201,7 +144,6 @@
 				83E61723258B64F200979A43 /* WakaTime Tracker.entitlements */,
 				8340B9AE2564A98600C4FF7F /* WakaTime_TrackerApp.swift */,
 				83BD1348258BC01700CB72A5 /* HomeView */,
-				83E61711258A96E900979A43 /* New Group */,
 				8340B9B22564A98900C4FF7F /* Assets.xcassets */,
 				8340B9B72564A98900C4FF7F /* Info.plist */,
 				830B193F258093A300CA6112 /* GoogleService-Info.plist */,
@@ -247,6 +189,9 @@
 			isa = PBXGroup;
 			children = (
 				83E6170F258A966700979A43 /* Utilis.swift */,
+				830ED265256D2C33005DD739 /* SpinnerView.swift */,
+				8340B9CD25654CD000C4FF7F /* ActivityIndicator+Extens.swift */,
+				830B196B25810CF100CA6112 /* MailView.swift */,
 			);
 			path = "Utilities + extention";
 			sourceTree = "<group>";
@@ -263,25 +208,18 @@
 				83BD1347258BBF8100CB72A5 /* Utilities + extention */,
 				83BD1346258BBF5A00CB72A5 /* ViewModel */,
 				83BD1345258BBF4C00CB72A5 /* Network */,
-				8340B9BE2564A99300C4FF7F /* Model.swift */,
+				83BD1349258BDAD000CB72A5 /* Model */,
 				8310EDE525686E14009FD89B /* JSONAnimation files */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
 		};
-		83E61711258A96E900979A43 /* New Group */ = {
+		83BD1349258BDAD000CB72A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8340B9B02564A98600C4FF7F /* HomeView.swift */,
-				833837C2257F55CE00349FB9 /* Cell View */,
-				833837BD257F535200349FB9 /* User Details */,
-				830ED263256D2BA0005DD739 /* ListPagination.swift */,
-				830ED265256D2C33005DD739 /* SpinnerView.swift */,
-				833837C9257F578300349FB9 /* API */,
-				8310EDEC2568705C009FD89B /* WakaTimeRefView.swift */,
-				833D0575256553C700B9265E /* Util */,
+				8340B9BE2564A99300C4FF7F /* Model.swift */,
 			);
-			path = "New Group";
+			path = Model;
 			sourceTree = "<group>";
 		};
 		83E6171C258AB93800979A43 /* User cell */ = {
@@ -442,29 +380,19 @@
 				8310EDE925686E45009FD89B /* LottieAnimationView.swift in Sources */,
 				830ED266256D2C33005DD739 /* SpinnerView.swift in Sources */,
 				83E6171E258AB94900979A43 /* UserImageView.swift in Sources */,
-				8381EA272566DAFA0079D828 /* UserDetailsView.swift in Sources */,
 				83E61722258AB9BB00979A43 /* Total_7_DaysView.swift in Sources */,
 				83E61717258A9C8D00979A43 /* WakaTimeViewModel.swift in Sources */,
 				833837C1257F53CC00349FB9 /* LanguageProgressView.swift in Sources */,
 				8340B9CE25654CD000C4FF7F /* ActivityIndicator+Extens.swift in Sources */,
 				8340B9BF2564A99300C4FF7F /* Model.swift in Sources */,
-				8340B9B12564A98600C4FF7F /* HomeView.swift in Sources */,
 				830B196C25810CF100CA6112 /* MailView.swift in Sources */,
-				830ED264256D2BA0005DD739 /* ListPagination.swift in Sources */,
-				8310EDED2568705C009FD89B /* WakaTimeRefView.swift in Sources */,
 				83E61713258A973300979A43 /* HomeVGridView.swift in Sources */,
-				833837BF257F537300349FB9 /* ProfileImageView.swift in Sources */,
 				83BD1343258BBA5600CB72A5 /* UserDetailView.swift in Sources */,
 				83E61715258A974700979A43 /* NetworkManager.swift in Sources */,
-				833837C8257F562E00349FB9 /* TopLanguagesView.swift in Sources */,
 				83E61710258A966700979A43 /* Utilis.swift in Sources */,
-				833837C6257F561100349FB9 /* Pass_7_DaysTimeView.swift in Sources */,
 				834F6865258B9724006DBE38 /* SideMenuView.swift in Sources */,
 				8340B9AF2564A98600C4FF7F /* WakaTime_TrackerApp.swift in Sources */,
 				83E61719258AA15900979A43 /* SearchBarView.swift in Sources */,
-				833D05732565538E00B9265E /* WakaTimeNetwork.swift in Sources */,
-				833D0579256553F700B9265E /* CellRowView.swift in Sources */,
-				833837C4257F55E800349FB9 /* RankAndProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,36 +29,41 @@ struct HomeVGridView: View {
                 SideMenuView(isShowingMenuView: $isShowingMenu)
             }
             
-            // scrollView
-            ScrollView(.vertical, showsIndicators: false){
-                // add navBar with config bytton
-                NavBarView(viewModel: .constant(viewModel), isShowingMenu: $isShowingMenu )
-                // search bar
-                SearchBarView(text: $searchText)
-                // filter bar
-                FilterLanguagesView(selectedLanguage: $viewModel.filteredLanguage)
-                    .padding(.vertical)
-                // vertical grid
-                LazyVGrid(columns: columns, spacing: 54) {
-                    ForEach(viewModel.languageFilter(forFilter: viewModel.filteredLanguage)
-                                .filter{$0.user.display_name.lowercased()
-                                    .contains(searchText.lowercased()) || searchText.isEmpty}, id:\.self){ user in
-                        UserCellView(user: user)
-                            .onTapGesture {
-                                withAnimation{
-                                    viewModel.selectedUser = user
-                                    viewModel.isShowingUserDetail.toggle()
+
+            if viewModel.isLoadingUsers {
+                LoadingIndicatorView()
+            } else {
+                ScrollView(.vertical, showsIndicators: false){
+                    // add navBar with config bytton
+                    NavBarView(viewModel: .constant(viewModel), isShowingMenu: $isShowingMenu )
+                        .padding(.top, 54)
+                    // search bar
+                    SearchBarView(text: $searchText)
+                    // filter bar
+                    FilterLanguagesView(selectedLanguage: $viewModel.filteredLanguage)
+                        .padding(.vertical)
+                    // vertical grid
+                    LazyVGrid(columns: columns, spacing: 54) {
+                        ForEach(viewModel.languageFilter(forFilter: viewModel.filteredLanguage)
+                                    .filter{$0.user.display_name.lowercased()
+                                        .contains(searchText.lowercased()) || searchText.isEmpty}, id:\.self){ user in
+                            UserCellView(user: user)
+                                .onTapGesture {
+                                    withAnimation{
+                                        viewModel.selectedUser = user
+                                        viewModel.isShowingUserDetail.toggle()
+                                    }
                                 }
-                            }
-                    }
-                }.padding(.top, 44)
+                        }
+                    }.padding(.top, 44)
+                    
+                }.cornerRadius(isShowingMenu ? 20 : 10)
+                .scaleEffect(isShowingMenu ? 0.8 : 1)
+                .offset(x: isShowingMenu ? 300 : 0, y: isShowingMenu ? 44 : 0)
+                .blur(radius: isShowingMenu ? 4 : 0)
+                .disabled(isShowingMenu)
                 
-            }.cornerRadius(isShowingMenu ? 20 : 10)
-            .scaleEffect(isShowingMenu ? 0.8 : 1)
-            .offset(x: isShowingMenu ? 300 : 0, y: isShowingMenu ? 44 : 0)
-            .blur(radius: isShowingMenu ? 4 : 0)
-            .disabled(isShowingMenu)
-            
+            }
             
             if let selectedUser = viewModel.selectedUser {
                 UserDetailView(user: selectedUser,
@@ -66,9 +71,9 @@ struct HomeVGridView: View {
                     .opacity(viewModel.isShowingUserDetail ? 1 : 0)
             }
             
-          
+            
         }.onAppear{ viewModel.getUsers() }
-        
+        .ignoresSafeArea()
         .statusBarStyle(.lightContent)
         .hideKeyboardWhenScroll(interactionType: .onDrag)
         .hideKeyboardWhenTouchOutsideTextField()
@@ -111,6 +116,7 @@ struct NavBarView: View {
             Text("Top 100")
                 .foregroundColor(Color(#colorLiteral(red: 0.6475275159, green: 0.6230242848, blue: 0.647654593, alpha: 1)))
                 .font(.system(size: 20, weight: .regular, design: .rounded))
+            Spacer()
             NeumorphismButton(
                 shapeType: .roundedRectangle(cornerRadius: 100),
                 normalImage: Image(systemName: "arrow.triangle.2.circlepath"),
@@ -126,5 +132,27 @@ struct NavBarView: View {
                 }
             )
         }.padding(.all)
+    }
+}
+
+struct LoadingIndicatorView: View {
+    var body: some View {
+        HStack{
+            Spacer()
+            VStack(alignment: .center){
+                ActivityIndicator()
+                //                                Text("\(String(format: "%.2f", viewModel.progress * 100))")
+                Text("Loading...")
+                    .foregroundColor(.white)
+                    .font(.system(size: 16, weight: .semibold))
+                    .multilineTextAlignment(.center)
+                    .lineLimit(nil)
+            }
+            .frame(width: 300, height: 140)
+            .padding()
+            .background(neumorphism.color)
+            .cornerRadius(80)
+            Spacer()
+        }
     }
 }
