@@ -17,29 +17,8 @@ struct SideMenuView: View {
             neumorphism.color.ignoresSafeArea()
             VStack{
                 VStack {
-                    HStack {
-                        VStack {
-                            LottieAnimationView(fileName: "coding")
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 200, height: 100)
-                            Text("Designed by\nTariq Almazyad")
-                                .font(.subheadline)
-                                .foregroundColor(Color(#colorLiteral(red: 0.5490196078, green: 0.5490196078, blue: 0.5490196078, alpha: 1)))
-                                .multilineTextAlignment(.center)
-                        }
-                        Spacer()
-                        Button(action: {
-                            withAnimation{ isShowingMenuView.toggle() }
-                        }, label: {
-                            Image(systemName: "xmark.circle")
-                                .foregroundColor(Color(#colorLiteral(red: 0.7450980392, green: 0.7450980392, blue: 0.7450980392, alpha: 1)))
-                                .font(.system(size: 24))
-                                .padding(.horizontal, 34)
-                                .padding(.bottom, 64)
-                        })
-                    }.padding(.top, 63)
-                    
-                    
+                    // nav view with lottile view and xMark
+                    NavView(isShowingMenuView: $isShowingMenuView)
                     ScrollView {
                         ForEach(SideMenuViewModel.allCases, id:\.self) { optionViewModel in
                             SideMenuCell(optionViewModel: optionViewModel)
@@ -58,7 +37,47 @@ struct SideMenuView: View {
     }
 }
 
+struct SideMenuView_Previews: PreviewProvider {
+    static var previews: some View {
+        SideMenuView(isShowingMenuView: .constant(true))
+            .environmentObject(neumorphism)
+    }
+}
+// 1- nav view
+struct NavView: View {
+    @Binding var isShowingMenuView: Bool
+    var body: some View {
+        HStack {
+            VStack {
+                LottieAnimationView(fileName: "coding")
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 200, height: 100)
+                Text("Designed by\nTariq Almazyad")
+                    .font(.subheadline)
+                    .foregroundColor(Color(#colorLiteral(red: 0.5490196078, green: 0.5490196078, blue: 0.5490196078, alpha: 1)))
+                    .multilineTextAlignment(.center)
+            }
+            Spacer()
+            
+            NeumorphismButton(
+                shapeType: .roundedRectangle(cornerRadius: 100),
+                normalImage: Image(systemName: "xmark.circle"),
+                selectedImage: Image(systemName: "xmark.circle"),
+                width: 40,
+                height: 40,
+                imageWidth: 30,
+                imageHeight: 30,
+                handler: {
+                    withAnimation{ isShowingMenuView.toggle() }
+                }
+            ).padding(.trailing, 34)
+            .padding(.bottom, 34)
+            
+        }.padding(.top, 63)
+    }
+}
 
+// 2- buttons cell
 struct SideMenuCell: View {
     @State var result: Result<MFMailComposeResult, Error>? = nil
     @State var isShowingMailView = false
@@ -95,14 +114,7 @@ struct SideMenuCell: View {
     }
 }
 
-
-struct SideMenuView_Previews: PreviewProvider {
-    static var previews: some View {
-        SideMenuView(isShowingMenuView: .constant(true))
-    }
-}
-
-import Foundation
+// enum Model
 enum SideMenuViewModel: Int, CaseIterable {
     case wakaTimeWebsite
     case appVersion
@@ -123,5 +135,4 @@ enum SideMenuViewModel: Int, CaseIterable {
         case .wakaTimeWebsite: return "Visit WakaTime.com"
         }
     }
-    
 }

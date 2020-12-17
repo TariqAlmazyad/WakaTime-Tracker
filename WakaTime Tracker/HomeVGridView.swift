@@ -43,21 +43,30 @@ struct HomeVGridView: View {
                     ForEach(viewModel.languageFilter(forFilter: viewModel.filteredLanguage)
                                 .filter{$0.user.display_name.lowercased()
                                     .contains(searchText.lowercased()) || searchText.isEmpty}, id:\.self){ user in
-                        
                         UserCellView(user: user)
+                            .onTapGesture {
+                                withAnimation{
+                                    viewModel.selectedUser = user
+                                    viewModel.isShowingUserDetail.toggle()
+                                }
+                            }
                     }
                 }.padding(.top, 44)
-            }
-            .cornerRadius(isShowingMenu ? 20 : 10)
+                
+            }.cornerRadius(isShowingMenu ? 20 : 10)
             .scaleEffect(isShowingMenu ? 0.8 : 1)
             .offset(x: isShowingMenu ? 300 : 0, y: isShowingMenu ? 44 : 0)
             .blur(radius: isShowingMenu ? 4 : 0)
             .disabled(isShowingMenu)
             
-        }.navigationBarHidden(true)
-        .onAppear{
-            viewModel.getUsers()
-        }
+            
+            if let selectedUser = viewModel.selectedUser {
+                UserDetailView(user: selectedUser)
+                    .opacity(viewModel.isShowingUserDetail ? 1 : 0)
+            }
+            
+          
+        }.onAppear{ viewModel.getUsers() }
         
         .statusBarStyle(.lightContent)
         .hideKeyboardWhenScroll(interactionType: .onDrag)

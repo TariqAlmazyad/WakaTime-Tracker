@@ -34,6 +34,7 @@
 		8381EA2A256743150079D828 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 8381EA29256743150079D828 /* SwiftUICharts */; };
 		8395ACE82566506900162275 /* LNPopupUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8395ACE72566506900162275 /* LNPopupUI */; };
 		8395ACE92566506900162275 /* LNPopupUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 8395ACE72566506900162275 /* LNPopupUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		83BD1343258BBA5600CB72A5 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BD1342258BBA5600CB72A5 /* UserDetailView.swift */; };
 		83E61710258A966700979A43 /* Utilis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6170F258A966700979A43 /* Utilis.swift */; };
 		83E61713258A973300979A43 /* HomeVGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E61712258A973300979A43 /* HomeVGridView.swift */; };
 		83E61715258A974700979A43 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E61714258A974700979A43 /* NetworkManager.swift */; };
@@ -88,6 +89,7 @@
 		834F6862258B7876006DBE38 /* FilterLanguagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterLanguagesView.swift; sourceTree = "<group>"; };
 		834F6864258B9724006DBE38 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		8381EA262566DAFA0079D828 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
+		83BD1342258BBA5600CB72A5 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		83E6170F258A966700979A43 /* Utilis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilis.swift; sourceTree = "<group>"; };
 		83E61712258A973300979A43 /* HomeVGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVGridView.swift; sourceTree = "<group>"; };
 		83E61714258A974700979A43 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				83E61723258B64F200979A43 /* WakaTime Tracker.entitlements */,
 				8340B9AE2564A98600C4FF7F /* WakaTime_TrackerApp.swift */,
 				83E61712258A973300979A43 /* HomeVGridView.swift */,
+				83BD1342258BBA5600CB72A5 /* UserDetailView.swift */,
 				834F6864258B9724006DBE38 /* SideMenuView.swift */,
 				834F6862258B7876006DBE38 /* FilterLanguagesView.swift */,
 				83E61718258AA15900979A43 /* SearchBarView.swift */,
@@ -411,6 +414,7 @@
 				8310EDED2568705C009FD89B /* WakaTimeRefView.swift in Sources */,
 				83E61713258A973300979A43 /* HomeVGridView.swift in Sources */,
 				833837BF257F537300349FB9 /* ProfileImageView.swift in Sources */,
+				83BD1343258BBA5600CB72A5 /* UserDetailView.swift in Sources */,
 				83E61715258A974700979A43 /* NetworkManager.swift in Sources */,
 				833837C8257F562E00349FB9 /* TopLanguagesView.swift in Sources */,
 				83E61710258A966700979A43 /* Utilis.swift in Sources */,
