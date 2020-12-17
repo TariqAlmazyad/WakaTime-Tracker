@@ -111,6 +111,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8302FB7F258BE243006B8E0C /* HomeViews helpers */ = {
+			isa = PBXGroup;
+			children = (
+				834F6864258B9724006DBE38 /* SideMenuView.swift */,
+				83E61718258AA15900979A43 /* SearchBarView.swift */,
+				834F6862258B7876006DBE38 /* FilterLanguagesView.swift */,
+			);
+			path = "HomeViews helpers";
+			sourceTree = "<group>";
+		};
 		8310EDE525686E14009FD89B /* JSONAnimation files */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,9 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				83E61712258A973300979A43 /* HomeVGridView.swift */,
-				83E61718258AA15900979A43 /* SearchBarView.swift */,
-				834F6862258B7876006DBE38 /* FilterLanguagesView.swift */,
-				834F6864258B9724006DBE38 /* SideMenuView.swift */,
+				8302FB7F258BE243006B8E0C /* HomeViews helpers */,
 				83E6171C258AB93800979A43 /* User cell */,
 				83BD1344258BBF2400CB72A5 /* User Detail View */,
 				83BD1347258BBF8100CB72A5 /* Utilities + extention */,
