@@ -29,6 +29,7 @@
 		8340B9CB25654B7500C4FF7F /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8340B9CA25654B7500C4FF7F /* SDWebImageSwiftUI */; };
 		8340B9CE25654CD000C4FF7F /* ActivityIndicator+Extens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B9CD25654CD000C4FF7F /* ActivityIndicator+Extens.swift */; };
 		834F6863258B7876006DBE38 /* FilterLanguagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834F6862258B7876006DBE38 /* FilterLanguagesView.swift */; };
+		834F6865258B9724006DBE38 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834F6864258B9724006DBE38 /* SideMenuView.swift */; };
 		8381EA272566DAFA0079D828 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381EA262566DAFA0079D828 /* UserDetailsView.swift */; };
 		8381EA2A256743150079D828 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 8381EA29256743150079D828 /* SwiftUICharts */; };
 		8395ACE82566506900162275 /* LNPopupUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8395ACE72566506900162275 /* LNPopupUI */; };
@@ -85,6 +86,7 @@
 		8340B9BE2564A99300C4FF7F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8340B9CD25654CD000C4FF7F /* ActivityIndicator+Extens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityIndicator+Extens.swift"; sourceTree = "<group>"; };
 		834F6862258B7876006DBE38 /* FilterLanguagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterLanguagesView.swift; sourceTree = "<group>"; };
+		834F6864258B9724006DBE38 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		8381EA262566DAFA0079D828 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		83E6170F258A966700979A43 /* Utilis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilis.swift; sourceTree = "<group>"; };
 		83E61712258A973300979A43 /* HomeVGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVGridView.swift; sourceTree = "<group>"; };
@@ -198,12 +200,14 @@
 				83E61723258B64F200979A43 /* WakaTime Tracker.entitlements */,
 				8340B9AE2564A98600C4FF7F /* WakaTime_TrackerApp.swift */,
 				83E61712258A973300979A43 /* HomeVGridView.swift */,
+				834F6864258B9724006DBE38 /* SideMenuView.swift */,
 				834F6862258B7876006DBE38 /* FilterLanguagesView.swift */,
 				83E61718258AA15900979A43 /* SearchBarView.swift */,
 				83E6171C258AB93800979A43 /* User cell */,
 				83E61716258A9C8D00979A43 /* WakaTimeViewModel.swift */,
 				83E61714258A974700979A43 /* NetworkManager.swift */,
 				83E6170F258A966700979A43 /* Utilis.swift */,
+				8310EDE525686E14009FD89B /* JSONAnimation files */,
 				83E61711258A96E900979A43 /* New Group */,
 				8340B9BE2564A99300C4FF7F /* Model.swift */,
 				8340B9B22564A98900C4FF7F /* Assets.xcassets */,
@@ -232,7 +236,6 @@
 				830ED265256D2C33005DD739 /* SpinnerView.swift */,
 				833837C9257F578300349FB9 /* API */,
 				8310EDEC2568705C009FD89B /* WakaTimeRefView.swift */,
-				8310EDE525686E14009FD89B /* JSONAnimation files */,
 				833D0575256553C700B9265E /* Utilits */,
 			);
 			path = "New Group";
@@ -412,6 +415,7 @@
 				833837C8257F562E00349FB9 /* TopLanguagesView.swift in Sources */,
 				83E61710258A966700979A43 /* Utilis.swift in Sources */,
 				833837C6257F561100349FB9 /* Pass_7_DaysTimeView.swift in Sources */,
+				834F6865258B9724006DBE38 /* SideMenuView.swift in Sources */,
 				8340B9AF2564A98600C4FF7F /* WakaTime_TrackerApp.swift in Sources */,
 				83E61719258AA15900979A43 /* SearchBarView.swift in Sources */,
 				833D05732565538E00B9265E /* WakaTimeNetwork.swift in Sources */,

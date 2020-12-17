@@ -25,6 +25,18 @@ extension String {
 }
 
 
+extension Bundle {
+    
+    var appVersion: String? {
+        self.infoDictionary?["CFBundleShortVersionString"] as? String
+    }
+    /// to get the app version   ---> let appVersion = Bundle.mainAppVersion
+    static var mainAppVersion: String? {
+        Bundle.main.appVersion
+    }
+}
+
+
 
 ///By wrapping views in a RootView, they will become the app's main / primary view. This will enable setting the statusBarStyle.
 struct RootView<Content: View> : View {
@@ -74,6 +86,13 @@ extension View {
     func hideKeyboardWhenScroll(interactionType:  UIScrollView.KeyboardDismissMode) -> some View {
         return self.onAppear{
             UIScrollView.appearance().keyboardDismissMode = interactionType
+        }
+    }
+    
+    /// disable scrollView functionality
+    func disableScrollView(_ isEnabled: Bool) -> some View {
+        return self.onAppear{
+            UIScrollView.appearance().isUserInteractionEnabled = isEnabled
         }
     }
     

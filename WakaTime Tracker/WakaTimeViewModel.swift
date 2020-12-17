@@ -18,36 +18,6 @@ final class WakaTimeViewModel: ObservableObject {
     @Published var filteredLanguage: LanguageSelection = .All
     
     
-    func languageFilter(forFilter filter: LanguageSelection) -> [UserStats]  {
-        
-        switch filter {
-        case .All: return users
-        case .Swift: return users.filter{$0.running_total.languages.contains(where: {$0.name == "Swift"})}
-        case .Python: return users.filter{$0.running_total.languages.contains(where: {$0.name == "Python"})}
-        case .Java: return users.filter{$0.running_total.languages.contains(where: {$0.name == "Java"})}
-        case .JavaScript: return users.filter{$0.running_total.languages.contains(where: {$0.name == "JavaScript"})}
-        case .Kotlin: return users.filter{$0.running_total.languages.contains(where: {$0.name == "Kotlin"})}
-        case .TypeScript: return users.filter{$0.running_total.languages.contains(where: {$0.name == "TypeScript"})}
-        case .Bash: return users.filter{$0.running_total.languages.contains(where: {$0.name == "Bash"})}
-        case .C: return users.filter{$0.running_total.languages.contains(where: {$0.name == "C++"})}
-        case .Cocoa: return users.filter{$0.running_total.languages.contains(where: {$0.name == "C#"})}
-        case .CSS: return users.filter{$0.running_total.languages.contains(where: {$0.name == "CSS"})}
-        case .PHP: return users.filter{$0.running_total.languages.contains(where: {$0.name == "PHP"})}
-        case .Dart: return users.filter{$0.running_total.languages.contains(where: {$0.name == "Dart"})}
-        case .Ruby: return users.filter{$0.running_total.languages.contains(where: {$0.name == "Ruby"})}
-        case .SQL: return users.filter{$0.running_total.languages.contains(where: {$0.name == "SQL"})}
-        case .Svelte: return users.filter{$0.running_total.languages.contains(where: {$0.name == "Svelte"})}
-        case .Lua: return users.filter{$0.running_total.languages.contains(where: {$0.name == "Lua"})}
-        case .GraphQL: return users.filter{$0.running_total.languages.contains(where: {$0.name == "GraphQL"})}
-        case .Groovy: return users.filter{$0.running_total.languages.contains(where: {$0.name == "Groovy"})}
-        case .YAML: return users.filter{$0.running_total.languages.contains(where: {$0.name == "YAML"})}
-        case .Vue: return users.filter{$0.running_total.languages.contains(where: {$0.name == "Vue"})}
-        case .HTML: return users.filter{$0.running_total.languages.contains(where: {$0.name == "HTML"})}
-        case .JSON: return users.filter{$0.running_total.languages.contains(where: {$0.name == "JSON"})}
-        case .XML: return users.filter{$0.running_total.languages.contains(where: {$0.name == "XML"})}
-        case .INI: return users.filter{$0.running_total.languages.contains(where: {$0.name == "INI"})}
-        }
-    }
     
     func getUsers(){
         isLoading = true
@@ -64,7 +34,8 @@ final class WakaTimeViewModel: ObservableObject {
                     self.wakatimeData = wakatimeData
                     self.users = wakatimeData.data
                     print(self.wakatimeData?.data)
-                    // if failure? display the proper prompt.
+                    
+                // if failure? display the proper prompt.
                 case .failure( let error):
                     switch error {
                     case .invalidURL:
@@ -83,6 +54,36 @@ final class WakaTimeViewModel: ObservableObject {
                 
                 self.isLoading = false
             }
+        }
+    }
+    
+    func languageFilter(forFilter filter: LanguageSelection) -> [UserStats]  {
+        switch filter {
+        case .All: return users
+        case .Swift: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .Python: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .Java: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .JavaScript: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .Kotlin: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .TypeScript: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .Bash: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .C: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .Cocoa: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .CSS: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .PHP: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .Dart: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .Ruby: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .SQL: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .Svelte: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .Lua: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .GraphQL: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .Groovy: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .YAML: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .Vue: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .HTML: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .JSON: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .XML: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
+        case .INI: return users.filter{$0.running_total.languages.contains(where: {$0.name == filter.languageName})}
         }
     }
 }

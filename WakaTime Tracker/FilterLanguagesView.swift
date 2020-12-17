@@ -12,6 +12,7 @@ struct FilterLanguagesView: View {
     
     private let optionWidth = UIScreen.main.bounds.width /  CGFloat(LanguageSelection.allCases.count)
     @Binding var selectedLanguage: LanguageSelection
+    @Namespace private var animation
     var body: some View {
         ZStack {
             neumorphism.color.ignoresSafeArea()
@@ -45,7 +46,7 @@ struct FilterLanguagesView: View {
 
 struct FilterLanguagesView_Previews: PreviewProvider {
     static var previews: some View {
-        FilterLanguagesView(selectedLanguage: .constant(.Swift))
+        HomeVGridView()
             .environmentObject(neumorphism)
     }
 }

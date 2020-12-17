@@ -15,6 +15,7 @@ struct UserCellView: View {
     @State var result: Result<MFMailComposeResult, Error>? = nil
     @State var isShowingMailView = false
     
+    
     var isAppAuthor: Bool {
         user.user.display_name == "Tariq Almazyad"
     }
@@ -37,10 +38,12 @@ struct UserCellView: View {
             Text(user.user.display_name)
                 .foregroundColor(Color(#colorLiteral(red: 0.6475275159, green: 0.6230242848, blue: 0.647654593, alpha: 1)))
                 .padding(.top)
+            
             Text(isAppAuthor ? "WakaTime\nApp developer" : "")
                 .foregroundColor(.white)
                 .padding(.top, 4)
                 .multilineTextAlignment(.center)
+            
                 // total 7 days capsule
             Total_7_DaysView(user: user)
             
@@ -63,7 +66,10 @@ struct UserCellView: View {
                     .foregroundColor(Color.white.opacity(0.5))
             }
             
+            // top 3 languages.
             TopUsedLanguagesView(user: user)
+            
+            // show menu
         }.contextMenu(ContextMenu(menuItems: {
             Button(action: {
                 self.isShowingMailView.toggle()
@@ -74,6 +80,7 @@ struct UserCellView: View {
                 }.font(.system(size: 24))
             })
         }))
+        
         .disabled(userHasNoEmail)
         .sheet(isPresented: $isShowingMailView) {
             MailView(result: $result, emailAdress: .constant(user.user.email ?? ""),

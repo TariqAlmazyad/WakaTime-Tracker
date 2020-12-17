@@ -76,7 +76,7 @@ struct InfoView: View {
 struct JSONAnimationView: View {
     var body: some View {
         ZStack {
-            LottieAnimationView()
+            LottieAnimationView(fileName: "coding")
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 350, height: 300)
                 .foregroundColor(.white)

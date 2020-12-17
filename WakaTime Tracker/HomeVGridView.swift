@@ -12,6 +12,7 @@ import SDWebImageSwiftUI
 struct HomeVGridView: View {
     @ObservedObject private var viewModel = WakaTimeViewModel()
     @State private var searchText: String = ""
+    @State private var isShowingMenu: Bool = false
     
     private let columns: [GridItem] = [
         GridItem(.adaptive(minimum: UIScreen.screenWidth / 4, maximum: 250),
@@ -24,10 +25,14 @@ struct HomeVGridView: View {
         ZStack{
             // background color
             neumorphism.color.ignoresSafeArea()
+            if isShowingMenu {
+                SideMenuView(isShowingMenuView: $isShowingMenu)
+            }
+            
             // scrollView
             ScrollView(.vertical, showsIndicators: false){
                 // add navBar with config bytton
-                NavBarView()
+                NavBarView(viewModel: .constant(viewModel), isShowingMenu: $isShowingMenu )
                 // search bar
                 SearchBarView(text: $searchText)
                 // filter bar
@@ -43,8 +48,14 @@ struct HomeVGridView: View {
                     }
                 }.padding(.top, 44)
             }
+            .cornerRadius(isShowingMenu ? 20 : 10)
+            .scaleEffect(isShowingMenu ? 0.8 : 1)
+            .offset(x: isShowingMenu ? 300 : 0, y: isShowingMenu ? 44 : 0)
+            .blur(radius: isShowingMenu ? 4 : 0)
+            .disabled(isShowingMenu)
             
-        }.onAppear{
+        }.navigationBarHidden(true)
+        .onAppear{
             viewModel.getUsers()
         }
         
@@ -63,6 +74,8 @@ struct HomeVGridView_Previews: PreviewProvider {
 }
 
 struct NavBarView: View {
+    @Binding var viewModel : WakaTimeViewModel
+    @Binding var isShowingMenu: Bool
     var body: some View {
         HStack{
             NeumorphismButton(
@@ -74,15 +87,29 @@ struct NavBarView: View {
                 imageWidth: 30,
                 imageHeight: 30,
                 handler: {
-                    print("did select")
+                    withAnimation{
+                        isShowingMenu.toggle()
+                    }
                 }
             )
             Spacer()
             Text("Top 100")
                 .foregroundColor(Color(#colorLiteral(red: 0.6475275159, green: 0.6230242848, blue: 0.647654593, alpha: 1)))
                 .font(.system(size: 20, weight: .regular, design: .rounded))
-                .padding(.trailing, 64)
-            Spacer()
+            NeumorphismButton(
+                shapeType: .roundedRectangle(cornerRadius: 100),
+                normalImage: Image(systemName: "arrow.triangle.2.circlepath"),
+                selectedImage: Image(systemName: "arrow.triangle.2.circlepath"),
+                width: 40,
+                height: 40,
+                imageWidth: 30,
+                imageHeight: 30,
+                handler: {
+                    withAnimation{
+                        viewModel.getUsers()
+                    }
+                }
+            )
         }.padding(.all)
     }
 }
