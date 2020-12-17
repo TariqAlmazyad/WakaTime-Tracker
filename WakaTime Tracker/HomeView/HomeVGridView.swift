@@ -82,6 +82,11 @@ struct HomeVGridView_Previews: PreviewProvider {
             .environmentObject(neumorphism)
     }
 }
+let neumorphism = NeumorphismManager(
+    isDark: true,
+    lightColor: Color(hex: "C1D2EB"),
+    darkColor: Color(hex: "2C292C")
+)
 
 struct NavBarView: View {
     @Binding var viewModel : WakaTimeViewModel

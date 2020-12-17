@@ -33,7 +33,7 @@ struct LanguageProgressView: View {
 
 struct LanguageProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        UserDetailsView(user: .init(rank: 1,
+        UserDetailView(user: .init(rank: 1,
                                     running_total: .init(daily_average: 98,
                                                          human_readable_daily_average: "",
                                                          human_readable_total: "",
@@ -41,7 +41,7 @@ struct LanguageProgressView_Previews: PreviewProvider {
                                                          languages: [.init(name: "",
                                                                            total_seconds: 32)]),
                                     user: .init(display_name: "Tariq Almazyad",
-                                                photo: "", email: nil, location: "")))
+                                                photo: "", email: nil, location: "")), isShowingUserDetail: .constant(true))
             .environmentObject(neumorphism)
             .preferredColorScheme(.dark)
         
