@@ -144,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				8381EA262566DAFA0079D828 /* UserDetailsView.swift */,
-				833837C0257F53CC00349FB9 /* LanguageProgressView.swift */,
 				833837BE257F537300349FB9 /* ProfileImageView.swift */,
 			);
 			path = "User Details";
@@ -223,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				83BD1342258BBA5600CB72A5 /* UserDetailView.swift */,
+				833837C0257F53CC00349FB9 /* LanguageProgressView.swift */,
 			);
 			path = "User Detail View";
 			sourceTree = "<group>";
