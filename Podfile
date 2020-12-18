@@ -15,7 +15,6 @@ pod 'Firebase/Functions'
 pod 'Firebase/Messaging'
 pod 'Firebase/RemoteConfig'
 pod 'Firebase/InAppMessaging'
-pod 'Firebase/Analytics'
 pod 'Firebase/Messaging'
 pod 'Firebase/Auth'
 end

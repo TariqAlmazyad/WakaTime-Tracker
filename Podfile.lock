@@ -2,8 +2,6 @@ PODS:
   - Firebase/ABTesting (7.1.0):
     - Firebase/CoreOnly
     - FirebaseABTesting (~> 7.1.0)
-  - Firebase/Analytics (7.1.0):
-    - Firebase/Core
   - Firebase/Auth (7.1.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 7.1.0)
@@ -157,7 +155,6 @@ PODS:
 
 DEPENDENCIES:
   - Firebase/ABTesting
-  - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Crashlytics
@@ -224,6 +221,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
 
-PODFILE CHECKSUM: 2bc4ebbe4398038ae489371cf57990a71a98bf2c
+PODFILE CHECKSUM: 9f3c27c5cdc6a210d02ae4933368d90d86d0878c
 
 COCOAPODS: 1.8.4
