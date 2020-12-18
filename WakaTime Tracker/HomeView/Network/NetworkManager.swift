@@ -52,8 +52,10 @@ final class NetworkManager {
             completion(.failure(.invalidURL))
             return
         }
+        print("DEBUG: [1] No error detected with baseUrl")
         // 2 start URLSession to get data from WakaTime.com
         URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
+            print("DEBUG: [2] Starting Url session...")
             guard let self = self else {return}
             DispatchQueue.main.async { [weak self] in
                 
@@ -62,6 +64,7 @@ final class NetworkManager {
                     completion(.failure(.invalidResponse))
                     return
                 }
+                print("DEBUG: [3] No error detected with Response...")
                 // 4 check for data
                 guard let data = data else {
                     completion(.failure(.invalidJSON))
@@ -71,12 +74,12 @@ final class NetworkManager {
                 // 5 decode data and escape with result
                 do {
                     let decodedData = try JSONDecoder().decode(WakaTimeData.self, from: data)
-                    print("Total pages is \(decodedData.page)")
+                    print("DEBUG: [4] Successfully decoded data ...")
                     completion(.success(decodedData))
                     
                 } catch (let error){
                     completion(.failure(.invalidJSON))
-                    print("Failed to decode JSON due to unMatched struct \(error.localizedDescription)")
+                    print("DEBUG: [!!!] Failed to decode JSON due to unMatched struct \(error.localizedDescription)")
                 }
             }
         }.resume()

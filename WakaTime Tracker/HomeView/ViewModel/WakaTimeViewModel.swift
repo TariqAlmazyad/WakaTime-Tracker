@@ -25,6 +25,7 @@ final class WakaTimeViewModel: ObservableObject {
             guard let self = self else {return}
             
             // update UI on mainThread
+            print("DEBUG: [5] Getting all users in viewModel...")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
                 guard let self = self else {return}
                 self.objectWillChange.send()
@@ -33,8 +34,10 @@ final class WakaTimeViewModel: ObservableObject {
                 case .success( let wakatimeData ):
                     self.wakatimeData = wakatimeData
                     self.users = wakatimeData.data
+                    print("DEBUG: [6] Successfully got all users...")
                 // if failure? display the proper prompt.
                 case .failure( let error):
+                    print("DEBUG: [!!!] Error...")
                     switch error {
                     case .invalidURL:
                         self.alertItem = AlertContext.invalidURL
